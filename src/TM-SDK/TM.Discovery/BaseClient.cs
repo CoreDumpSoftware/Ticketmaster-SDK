@@ -1,10 +1,10 @@
-﻿using RestSharp;
-using System.IO;
+﻿using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using RestSharp;
 
-namespace TM.Discovery.V2
+namespace TM.Discovery
 {
     /// <summary>
     /// The BaseClient class.

@@ -37,8 +37,7 @@ The implementation of interfaces, the clients, in sdk required to resolve <code>
   var restClient = new RestClient(config.ApiRootUrl);
   
   var eventsApiClient = new EventsClient(client, config);
-  
-  var result = await _sut.SearchEventsAsync(new BaseQuery());
+  var result = await _sut.SearchEventsAsync(new SearchEventsRequest());
 ````
 
 <h3>The requests classes and <code>BaseQuery</code> class.</h3>
@@ -46,7 +45,7 @@ The implementation of interfaces, the clients, in sdk required to resolve <code>
 The <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/">Discovery API</a> can accept query parameters
 for different endpoints. To allow pass this query parameters was created <code>BaseQuery</code> which have <code>QueryParameters</code> property. 
 
-For adding this parameters you just need create new instance of BaseQuery class and add them to this property use the rules what described in Method description for Api. Example for <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/#srch-events-v2">Search Events</a> method is: 
+For adding this parameters you just need create new instance of IDiscoveryApiRequest, IDiscoveryApiGetRequest interface. In this solution have implementations for this interfaces. The SearchAttractionsRequest, SearchClassificationsRequest, SearchEventsRequest, SearchVenuesRequest classes. Use method <code> AddQueryParameter </code> to add query properties use the rules what described in Method description for Api. Example for <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/#srch-events-v2">Search Events</a> method is: 
 
 ```C#
 var key = "size";

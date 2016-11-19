@@ -45,11 +45,12 @@ The implementation of interfaces, the clients, in sdk required to resolve <code>
 The <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/">Discovery API</a> can accept query parameters
 for different endpoints. To allow pass this query parameters was created <code>BaseQuery</code> which have <code>QueryParameters</code> property. 
 
-For adding this parameters you just need create new instance of IDiscoveryApiRequest, IDiscoveryApiGetRequest interface. In this solution have implementations for this interfaces. The SearchAttractionsRequest, SearchClassificationsRequest, SearchEventsRequest, SearchVenuesRequest classes. Use method <code> AddQueryParameter </code> to add query properties use the rules what described in Method description for Api. Example for <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/#srch-events-v2">Search Events</a> method is: 
+For adding this parameters you just need create new instance of IDiscoveryApiRequest, IDiscoveryApiGetRequest interface. In this solution have implementations for this interfaces. The <code>SearchAttractionsRequest</code>, <code>SearchClassificationsRequest</code>, <code>SearchEventsRequest</code>, <code>SearchVenuesRequest</code> classes. Use method <code> AddQueryParameter </code> to add query properties, the rules described in Method description for Api. The Example for <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/#srch-events-v2">Search Events</a> method is: 
 
 ```C#
-var key = "size";
-var value = "10";
-var request = new BaseQuery();
-request.QueryParameters.Add(key, value);
+var request = new SearchAttractionsRequest();
+request.AddQueryParameter(new KeyValuePair<SearchEventsQueryParameters, string>(SearchEventsQueryParameters.attractionId, "K8vZ91713eV"));
 ```
+
+Contact me in skype : serhiivoznyi
+ 

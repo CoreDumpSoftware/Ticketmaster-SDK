@@ -1,6 +1,7 @@
 ﻿using NSubstitute;
 using Ploeh.AutoFixture;
 using RestSharp;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -39,7 +40,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task CallSearchEventsAsync_ShouldReturnIRestResponse()
         {
-            var response = await _sut.CallSearchEventsAsync(new BaseQuery());
+            var response = await _sut.CallSearchEventsAsync(new SearchEventsRequest());
             Assert.NotNull(response);
             Assert.IsType<RestResponse>(response);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -69,13 +70,13 @@ namespace TM.Discovery.Tests.V2.ClientTests
                        StatusCode = statusCode
                    });
 
-            await Assert.ThrowsAnyAsync<InvalidDataException>(() => _sut.SearchEventsAsync(new BaseQuery()));
+            await Assert.ThrowsAnyAsync<InvalidDataException>(() => _sut.SearchEventsAsync(new SearchEventsRequest()));
         }
 
         [Fact]
         public async Task SearchEventsAsync_ShouldReturnParsedRespond_WhenStatusCodeIsHttpStatusCodeOK()
         {
-            var result = await _sut.SearchEventsAsync(new BaseQuery());
+            var result = await _sut.SearchEventsAsync(new SearchEventsRequest());
 
             Assert.NotNull(result);
             Assert.NotNull(result.Links);
@@ -85,22 +86,22 @@ namespace TM.Discovery.Tests.V2.ClientTests
         }
 
         [Theory]
-        [InlineData("attractionId", "K8vZ91713eV")]
-        [InlineData("venueId", "KovZpZAEdFtJ")]
-        [InlineData("postalCode", "90069")]
-        [InlineData("latlong", "34.0928090,-118.3286610")]
-        [InlineData("radius", "25")]
-        [InlineData("unit", "miles")]
-        [InlineData("source", "ticketmaster")]
-        [InlineData("marketId", "27")]
-        [InlineData("startDateTime", "2017-01-01T00:00:00Z")]
-        [InlineData("endDateTime", "2017-01-01T00:00:00Z")]
-        [InlineData("size", "1")]
-        [InlineData("page", "1")]
-        public async Task SearchEventsAsync_ShouldBuildRequestWithQueryParameters(string key, string value)
+        [InlineData(SearchEventsQueryParameters.attractionId, "K8vZ91713eV")]
+        [InlineData(SearchEventsQueryParameters.venueId, "KovZpZAEdFtJ")]
+        [InlineData(SearchEventsQueryParameters.postalCode, "90069")]
+        [InlineData(SearchEventsQueryParameters.latlong, "34.0928090,-118.3286610")]
+        [InlineData(SearchEventsQueryParameters.radius, "25")]
+        [InlineData(SearchEventsQueryParameters.unit, "miles")]
+        [InlineData(SearchEventsQueryParameters.source, "ticketmaster")]
+        [InlineData(SearchEventsQueryParameters.marketId, "27")]
+        [InlineData(SearchEventsQueryParameters.startDateTime, "2017-01-01T00:00:00Z")]
+        [InlineData(SearchEventsQueryParameters.endDateTime, "2017-01-01T00:00:00Z")]
+        [InlineData(SearchEventsQueryParameters.size, "1")]
+        [InlineData(SearchEventsQueryParameters.page, "1")]
+        public async Task SearchEventsAsync_ShouldBuildRequestWithQueryParameters(SearchEventsQueryParameters key, string value)
         {
-            var request = new BaseQuery();
-            request.QueryParameters.Add(key, value);
+            var request = new SearchEventsRequest();
+            request.AddQueryParameter(new KeyValuePair<SearchEventsQueryParameters, string>(key, value));
 
             await _sut.SearchEventsAsync(request);
 
@@ -108,7 +109,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
                 .Received()
                 .ExecuteTaskAsync<SearchEventsResponse>(
                     Arg.Is<RestRequest>(
-                        restRequest => restRequest.Parameters.Any(p => p.Name == key && Equals(p.Value, value))));
+                        restRequest => restRequest.Parameters.Any(p => p.Name == key.ToString() && Equals(p.Value, value))));
         }
     }
 }

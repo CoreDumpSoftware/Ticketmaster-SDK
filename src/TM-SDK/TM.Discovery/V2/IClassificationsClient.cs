@@ -12,29 +12,57 @@ namespace TM.Discovery.V2
         /// <summary>
         /// Searches the classifications asynchronous.
         /// </summary>
-        /// <param name="request">The request.</param>
+        /// <param name="request">The <see cref="SearchClassificationsRequest"/> request.</param>
         /// <returns>The <see cref="SearchClassificationsResponse"/>.</returns>
-        Task<SearchClassificationsResponse> SearchClassificationsAsync(BaseQuery request);
+        Task<SearchClassificationsResponse> SearchClassificationsAsync(SearchClassificationsRequest request);
+
+        /// <summary>
+        /// Searches the classifications asynchronous.
+        /// </summary>
+        /// <param name="request">The <see cref="IDiscoveryApiRequest"/> request.</param>
+        /// <returns>The <see cref="SearchClassificationsResponse"/>.</returns>
+        Task<SearchClassificationsResponse> SearchClassificationsAsync(IDiscoveryApiRequest request);
 
         /// <summary>
         /// Calls the search classifications asynchronous.
         /// </summary>
-        /// <param name="request">The <see cref="BaseQuery"/> request.</param>
+        /// <param name="request">The <see cref="SearchClassificationsRequest"/> request.</param>
         /// <returns>The <see cref="IRestResponse"/>.</returns>
-        Task<IRestResponse> CallSearchClassificationsAsync(BaseQuery request);
+        Task<IRestResponse> CallSearchClassificationsAsync(SearchClassificationsRequest request);
+
+        /// <summary>
+        /// Calls the search classifications asynchronous.
+        /// </summary>
+        /// <param name="request">The <see cref="IDiscoveryApiRequest"/> request.</param>
+        /// <returns>The <see cref="IRestResponse"/>.</returns>
+        Task<IRestResponse> CallSearchClassificationsAsync(IDiscoveryApiRequest request);
 
         /// <summary>
         /// Gets the classification details asynchronous.
         /// </summary>
-        /// <param name="request">The request.</param>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
         /// <returns>The <see cref="Classification"/>.</returns>
-        Task<Classification> GetClassificationDetailsAsync(Request request);
+        Task<Classification> GetClassificationDetailsAsync(GetRequest request);
+
+        /// <summary>
+        /// Gets the classification details asynchronous.
+        /// </summary>
+        /// <param name="request">The <see cref="IDiscoveryApiGetRequest"/> request.</param>
+        /// <returns>The <see cref="Classification"/>.</returns>
+        Task<Classification> GetClassificationDetailsAsync(IDiscoveryApiGetRequest request);
 
         /// <summary>
         /// Calls the get classification details asynchronous.
         /// </summary>
-        /// <param name="request">The <see cref="Request"/> request.</param>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
         /// <returns>The <see cref="Classification"/>.</returns>
-        Task<IRestResponse> CallGetClassificationDetailsAsync(Request request);
+        Task<IRestResponse> CallGetClassificationDetailsAsync(GetRequest request);
+
+        /// <summary>
+        /// Calls the get classification details asynchronous.
+        /// </summary>
+        /// <param name="request">The <see cref="IDiscoveryApiGetRequest"/> request.</param>
+        /// <returns>The <see cref="Classification"/>.</returns>
+        Task<IRestResponse> CallGetClassificationDetailsAsync(IDiscoveryApiGetRequest request);
     }
 }

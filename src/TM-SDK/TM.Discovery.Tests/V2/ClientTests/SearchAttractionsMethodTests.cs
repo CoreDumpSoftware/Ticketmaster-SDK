@@ -1,6 +1,7 @@
 ﻿using NSubstitute;
 using Ploeh.AutoFixture;
 using RestSharp;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -33,18 +34,20 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task SearchAttractionsAsync_ShouldReturnSearchAttractionsResponse()
         {
-            var response = await _sut.SearchAttractionsAsync(new BaseQuery());
+            var response = await _sut.SearchAttractionsAsync(new SearchAttractionsRequest());
             Assert.NotNull(response);
             Assert.Equal(_expectedResponse, response);
         }
 
         [Theory]
-        [InlineData("size", "1")]
-        [InlineData("page", "1")]
-        public async Task SearchAttractionsAsync_ShouldBuildRequestWithQueryParameters(string key, string value)
+        [InlineData(QueryParameters.size, "1")]
+        [InlineData(QueryParameters.page, "1")]
+        public async Task SearchAttractionsAsync_ShouldBuildRequestWithQueryParameters(QueryParameters key, string value)
         {
-            var request = new BaseQuery();
-            request.QueryParameters.Add(key, value);
+            var request = new SearchAttractionsRequest();
+
+
+            request.AddQueryParameter(new KeyValuePair<QueryParameters, string>(key, value));
 
             await _sut.SearchAttractionsAsync(request);
 
@@ -52,7 +55,26 @@ namespace TM.Discovery.Tests.V2.ClientTests
                 .Received()
                 .ExecuteTaskAsync<SearchAttractionsResponse>(
                     Arg.Is<RestRequest>(
-                        restRequest => restRequest.Parameters.Any(p => p.Name == key && Equals(p.Value, value))));
+                        restRequest => restRequest.Parameters.Any(p => p.Name == key.ToString() && Equals(p.Value, value))));
+        }
+
+
+        [Theory]
+        [InlineData(QueryParameters.size, "1")]
+        [InlineData(QueryParameters.page, "1")]
+        public async Task CallSearchAttractionsAsync_ShouldBuildRequestWithQueryParameters(QueryParameters key,
+            string value)
+        {
+            var request = new SearchAttractionsRequest();
+            request.AddQueryParameter(new KeyValuePair<QueryParameters, string>(key, value));
+
+            await _sut.CallSearchAttractionsAsync(request);
+
+            await Client
+                .Received()
+                .ExecuteTaskAsync(
+                    Arg.Is<RestRequest>(
+                        restRequest => restRequest.Parameters.Any(p => p.Name == key.ToString() && Equals(p.Value, value))));
         }
     }
 }

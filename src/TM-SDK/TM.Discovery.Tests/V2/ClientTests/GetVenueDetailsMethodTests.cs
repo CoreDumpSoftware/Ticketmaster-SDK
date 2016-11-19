@@ -38,14 +38,14 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task GetVenueDetailsAsync_ShouldReturnClassification()
         {
-            var result = await _sut.GetVenueDetailsAsync(new Request(""));
+            var result = await _sut.GetVenueDetailsAsync(new GetRequest(""));
             Assert.Equal(_venue, result);
         }
 
         [Fact]
         public async Task CallGetVenueDetailsAsync_ShouldReturnIRestResponse()
         {
-            var result = await _sut.CallGetVenueDetailsAsync(new Request(""));
+            var result = await _sut.CallGetVenueDetailsAsync(new GetRequest(""));
             Assert.NotNull(result);
             Assert.IsType<RestResponse>(result);
             Assert.Equal(_venue.ToString(), result.Content);

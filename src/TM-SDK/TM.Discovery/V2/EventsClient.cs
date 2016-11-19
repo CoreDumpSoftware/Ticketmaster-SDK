@@ -17,40 +17,70 @@ namespace TM.Discovery.V2
         {
         }
 
-        public async Task<SearchEventsResponse> SearchEventsAsync(BaseQuery request)
+        public Task<SearchEventsResponse> SearchEventsAsync(SearchEventsRequest request)
         {
-            var searchRequest = new RestRequest(EventsPath, Method.GET) { RequestFormat = DataFormat.Json };
-            return await ExecuteRequestAsync<SearchEventsResponse>(searchRequest, HttpStatusCode.OK, request);
+            return SearchEventsAsync((IDiscoveryApiRequest)request);
         }
 
-        public async Task<IRestResponse> CallSearchEventsAsync(BaseQuery request)
+        public Task<SearchEventsResponse> SearchEventsAsync(IDiscoveryApiRequest request)
         {
             var searchRequest = new RestRequest(EventsPath, Method.GET) { RequestFormat = DataFormat.Json };
-            return await ExecuteRequestAsync(searchRequest, request);
+            return ExecuteRequestAsync<SearchEventsResponse>(searchRequest, HttpStatusCode.OK, request);
         }
 
-        public async Task<Event> GetEventDetailsAsync(Request request)
+        public Task<IRestResponse> CallSearchEventsAsync(SearchEventsRequest request)
+        {
+            return CallSearchEventsAsync((IDiscoveryApiRequest)request);
+        }
+
+        public Task<IRestResponse> CallSearchEventsAsync(IDiscoveryApiRequest request)
+        {
+            var searchRequest = new RestRequest(EventsPath, Method.GET) { RequestFormat = DataFormat.Json };
+            return ExecuteRequestAsync(searchRequest, request);
+        }
+
+        public Task<Event> GetEventDetailsAsync(GetRequest request)
+        {
+            return GetEventDetailsAsync((IDiscoveryApiGetRequest)request);
+        }
+
+        public Task<Event> GetEventDetailsAsync(IDiscoveryApiGetRequest request)
         {
             var searchRequest = new RestRequest(EventsPathWithId, Method.GET) { RequestFormat = DataFormat.Json };
             searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
-            return await ExecuteRequestAsync<Event>(searchRequest, HttpStatusCode.OK, request);
+            return ExecuteRequestAsync<Event>(searchRequest, HttpStatusCode.OK, request);
         }
 
-        public Task<IRestResponse> CallGetEventDetailsAsync(Request request)
+        public Task<IRestResponse> CallGetEventDetailsAsync(GetRequest request)
+        {
+            return CallGetEventDetailsAsync((IDiscoveryApiGetRequest)request);
+        }
+
+        public Task<IRestResponse> CallGetEventDetailsAsync(IDiscoveryApiGetRequest request)
         {
             var searchRequest = new RestRequest(EventsPathWithId, Method.GET) { RequestFormat = DataFormat.Json };
             searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
             return ExecuteRequestAsync(searchRequest, request);
         }
 
-        public Task<GetEventImagesResponse> GetEventImagesAsync(Request request)
+        public Task<GetEventImagesResponse> GetEventImagesAsync(GetRequest request)
+        {
+            return GetEventImagesAsync((IDiscoveryApiGetRequest)request);
+        }
+
+        public Task<GetEventImagesResponse> GetEventImagesAsync(IDiscoveryApiGetRequest request)
         {
             var searchRequest = new RestRequest(EventsImagesPath, Method.GET) { RequestFormat = DataFormat.Json };
             searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
             return ExecuteRequestAsync<GetEventImagesResponse>(searchRequest, HttpStatusCode.OK, request);
         }
 
-        public Task<IRestResponse> CallGetEventImagesAsync(Request request)
+        public Task<IRestResponse> CallGetEventImagesAsync(GetRequest request)
+        {
+            return CallGetEventImagesAsync((IDiscoveryApiGetRequest)request);
+        }
+
+        public Task<IRestResponse> CallGetEventImagesAsync(IDiscoveryApiGetRequest request)
         {
             var searchRequest = new RestRequest(EventsImagesPath, Method.GET) { RequestFormat = DataFormat.Json };
             searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);

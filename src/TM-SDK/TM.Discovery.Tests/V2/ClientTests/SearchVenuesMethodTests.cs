@@ -38,7 +38,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task SearchVenuesAsync_ShouldReturnSearchVenuesResponse()
         {
-            var response = await _sut.SearchVenuesAsync(new BaseQuery());
+            var response = await _sut.SearchVenuesAsync(new SearchVenuesRequest());
             Assert.NotNull(response);
             Assert.Equal(_response, response);
         }
@@ -46,7 +46,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task CallSearchVenuesAsync_ShouldReturnSearchVenuesResponse()
         {
-            var response = await _sut.CallSearchVenuesAsync(new BaseQuery());
+            var response = await _sut.CallSearchVenuesAsync(new SearchVenuesRequest());
             Assert.NotNull(response);
             Assert.Equal(_response.ToString(), response.Content);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);

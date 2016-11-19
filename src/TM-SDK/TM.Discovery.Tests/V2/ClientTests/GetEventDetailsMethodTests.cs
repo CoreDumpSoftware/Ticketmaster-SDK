@@ -62,7 +62,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
                        StatusCode = statusCode
                    });
 
-            await Assert.ThrowsAnyAsync<InvalidDataException>(() => _sut.GetEventDetailsAsync(new Request("invalid id")));
+            await Assert.ThrowsAnyAsync<InvalidDataException>(() => _sut.GetEventDetailsAsync(new GetRequest("invalid id")));
 
 
         }
@@ -70,7 +70,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task GetEventDetailsAsync_ShouldReturnEvent_IfEventExist()
         {
-            var response = await _sut.GetEventDetailsAsync(new Request("Z1lMVSyiJynZ177dJa"));
+            var response = await _sut.GetEventDetailsAsync(new GetRequest("Z1lMVSyiJynZ177dJa"));
             Assert.NotNull(response);
             Assert.Equal(_expectedResult, response);
         }
@@ -78,7 +78,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task CallGetEventDetailsAsync_ShouldReturnIRestResponse()
         {
-            var response = await _sut.CallGetEventDetailsAsync(new Request("Z1lMVSyiJynZ177dJa"));
+            var response = await _sut.CallGetEventDetailsAsync(new GetRequest("Z1lMVSyiJynZ177dJa"));
             Assert.NotNull(response);
             Assert.IsType<RestResponse>(response);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);

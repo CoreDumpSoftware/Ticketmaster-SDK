@@ -1,8 +1,8 @@
-﻿using System.IO;
+﻿using RestSharp;
+using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using RestSharp;
 
 namespace TM.Discovery
 {
@@ -33,7 +33,7 @@ namespace TM.Discovery
             if (response.StatusCode == expectedCode) return;
 
             var exceptionBuilder = new StringBuilder();
-            exceptionBuilder.AppendLine("Invalid respond fro the server.");
+            exceptionBuilder.AppendLine("Invalid respond from the server.");
             exceptionBuilder.AppendLine("Current Status Code:" + response.StatusCode);
             exceptionBuilder.AppendLine("Error Message:" + response.ErrorMessage);
             throw new InvalidDataException(exceptionBuilder.ToString());
@@ -43,8 +43,8 @@ namespace TM.Discovery
         /// Adds the Query to request.
         /// </summary>
         /// <param name="request">The <see cref="IRestRequest"/> request.</param>
-        /// <param name="query">The <see cref="BaseQuery"/> query.</param>
-        protected void AddQuiriesToRequest(ref IRestRequest request, BaseQuery query)
+        /// <param name="query">The <see cref="IDiscoveryApiRequest"/> query.</param>
+        protected virtual void AddQuiriesToRequest(ref IRestRequest request, IDiscoveryApiRequest query)
         {
             if (query == null) return;
 
@@ -61,12 +61,12 @@ namespace TM.Discovery
         /// <typeparam name="T">Type of expected response.</typeparam>
         /// <param name="request">The request.</param>
         /// <param name="expectedStatusCode">The expected status code.</param>
-        /// <param name="query">The <see cref="BaseQuery"/>.</param>
+        /// <param name="query">The <see cref="IDiscoveryApiRequest"/>.</param>
         /// <returns></returns>
-        protected async Task<T> ExecuteRequestAsync<T>(
+        protected virtual async Task<T> ExecuteRequestAsync<T>(
             IRestRequest request,
             HttpStatusCode expectedStatusCode,
-            BaseQuery query = null)
+            IDiscoveryApiRequest query = null)
             where T : IDiscoveryApiRespond
         {
             AddQuiriesToRequest(ref request, query);
@@ -79,12 +79,11 @@ namespace TM.Discovery
         /// Executes the request asynchronous.
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <param name="expectedStatusCode">The expected <see cref="HttpStatusCode"/> status code.</param>
         /// <param name="query">The <see cref="BaseQuery"/> query.</param>
         /// <returns>The <see cref="IRestResponse"/> object.</returns>
-        protected async Task<IRestResponse> ExecuteRequestAsync(
+        protected virtual async Task<IRestResponse> ExecuteRequestAsync(
             IRestRequest request,
-            BaseQuery query = null)
+            IDiscoveryApiRequest query = null)
         {
             AddQuiriesToRequest(ref request, query);
             var response = await _client.ExecuteTaskAsync(request);

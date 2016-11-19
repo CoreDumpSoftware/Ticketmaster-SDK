@@ -40,14 +40,14 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task GetClassificationDetailsAsync_ShouldReturnClassification()
         {
-            var result = await _sut.GetClassificationDetailsAsync(new Request(""));
+            var result = await _sut.GetClassificationDetailsAsync(new GetRequest(""));
             Assert.Equal(_classification, result);
         }
 
         [Fact]
         public async Task CallGetClassificationDetailsAsync_ShouldReturnIRestResponse()
         {
-            var result = await _sut.CallGetClassificationDetailsAsync(new Request(""));
+            var result = await _sut.CallGetClassificationDetailsAsync(new GetRequest(""));
             Assert.NotNull(result);
             Assert.IsType<RestResponse>(result);
             Assert.Equal(_classification.ToString(), result.Content);

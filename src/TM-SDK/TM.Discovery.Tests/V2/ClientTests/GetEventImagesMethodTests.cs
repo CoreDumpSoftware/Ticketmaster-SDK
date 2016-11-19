@@ -41,7 +41,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task GetEventImagesAsync_ShouldReturnGetEventImagesResponse()
         {
-            var response = await _sut.GetEventImagesAsync(new Request("Z1lMVSyiJynZ177dJa"));
+            var response = await _sut.GetEventImagesAsync(new GetRequest("Z1lMVSyiJynZ177dJa"));
             Assert.NotNull(response);
             Assert.Equal(_expectedResult, response);
         }
@@ -49,7 +49,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task CallGetEventImagesAsync_ShouldReturnIRstResponse()
         {
-            var response = await _sut.CallGetEventImagesAsync(new Request("Z1lMVSyiJynZ177dJa"));
+            var response = await _sut.CallGetEventImagesAsync(new GetRequest("Z1lMVSyiJynZ177dJa"));
             Assert.NotNull(response);
             Assert.IsType<RestResponse>(response);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);

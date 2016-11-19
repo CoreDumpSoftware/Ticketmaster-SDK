@@ -4,6 +4,7 @@ using RestSharp;
 using System.Net;
 using System.Threading.Tasks;
 using TM.Discovery.V2;
+using TM.Discovery.V2.Models;
 using Xunit;
 
 namespace TM.Discovery.Tests.V2.ClientTests
@@ -37,7 +38,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task SearchClassificationsAsync_ShouldReturnSearchClassificationsResponse()
         {
-            var result = await _sut.SearchClassificationsAsync(new BaseQuery());
+            var result = await _sut.SearchClassificationsAsync(new SearchClassificationsRequest());
             Assert.NotNull(result);
             Assert.Equal(_expectedResponse, result);
         }
@@ -45,7 +46,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [Fact]
         public async Task SearchClassificationsAsync_ShouldReturnIRestResponse()
         {
-            var result = await _sut.CallSearchClassificationsAsync(new BaseQuery());
+            var result = await _sut.CallSearchClassificationsAsync(new SearchClassificationsRequest());
             Assert.NotNull(result);
             Assert.IsType<RestResponse>(result);
             Assert.Equal(HttpStatusCode.OK, result.StatusCode);

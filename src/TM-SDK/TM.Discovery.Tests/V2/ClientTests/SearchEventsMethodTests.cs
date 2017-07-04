@@ -98,6 +98,7 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [InlineData(SearchEventsQueryParameters.endDateTime, "2017-01-01T00:00:00Z")]
         [InlineData(SearchEventsQueryParameters.size, "1")]
         [InlineData(SearchEventsQueryParameters.page, "1")]
+        [InlineData(SearchEventsQueryParameters.geoPoint, "9q5cgq7tn")]
         public async Task SearchEventsAsync_ShouldBuildRequestWithQueryParameters(SearchEventsQueryParameters key, string value)
         {
             var request = new SearchEventsRequest();

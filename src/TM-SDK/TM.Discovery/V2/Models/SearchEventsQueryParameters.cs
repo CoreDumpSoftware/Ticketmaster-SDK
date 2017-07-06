@@ -27,6 +27,15 @@
         stateCode = 23,
         classificationName = 24,
         classificationId = 25,
-        dmaId = 26
+        dmaId = 26,
+        onsaleOnStartDate = 27,
+        onsaleOnAfterStartDate = 28,
+        segmentId = 29,
+        segmentName = 30,
+        promoterId = 31,
+        clientVisibility = 32,
+        nlp = 33,
+        geoPoint = 34,
+        includeLicensedContent = 35
     }
 }

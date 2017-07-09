@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ticketmaster-SDK: Discovery API")]
-[assembly: AssemblyDescription("This SDK supports Discovery API v2.")]
+[assembly: AssemblyTitle("Ticketmaster.Commerce")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("QQ.Development.Team")]
-[assembly: AssemblyProduct("Ticketmaster-SDK: Discovery API")]
-[assembly: AssemblyCopyright("Copyright © Serhii Voznyi 2017")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Ticketmaster.Commerce")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("61dea477-8879-4c50-b20c-06fdd77feaf0")]
+[assembly: Guid("ffb338b7-8151-4dd6-a6c9-4db623dae605")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -31,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.2")]
-[assembly: AssemblyFileVersion("1.0.0.2")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

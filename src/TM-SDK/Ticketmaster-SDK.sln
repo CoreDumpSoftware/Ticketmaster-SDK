@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery.Tests", "Ticketmaster.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{34597214-9972-4853-87C9-F3AD66C4F478}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce", "Ticketmaster.Commerce\Ticketmaster.Commerce.csproj", "{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce.Tests", "Ticketmaster.Commerce.Tests\Ticketmaster.Commerce.Tests.csproj", "{5675FE5B-3884-4974-B7E2-237F938623E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{34597214-9972-4853-87C9-F3AD66C4F478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34597214-9972-4853-87C9-F3AD66C4F478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34597214-9972-4853-87C9-F3AD66C4F478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5675FE5B-3884-4974-B7E2-237F938623E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5675FE5B-3884-4974-B7E2-237F938623E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5675FE5B-3884-4974-B7E2-237F938623E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5675FE5B-3884-4974-B7E2-237F938623E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC6A6EE2-2003-416A-83A2-33D8D89143B4}</ProjectGuid>
+    <ProjectGuid>{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Ticketmaster.Core</RootNamespace>
-    <AssemblyName>Ticketmaster.Core</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ticketmaster.Commerce</RootNamespace>
+    <AssemblyName>Ticketmaster.Commerce</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,16 +22,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -48,21 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClient.cs" />
-    <Compile Include="BaseQuery.cs" />
-    <Compile Include="CurrencyValuePair.cs" />
-    <Compile Include="GetRequest.cs" />
-    <Compile Include="IClientConfig.cs" />
-    <Compile Include="IDiscoveryApiGetRequest.cs" />
-    <Compile Include="IDiscoveryApiRequest.cs" />
-    <Compile Include="IDiscoveryApiRespond.cs" />
-    <Compile Include="IdTypePairCollectionData.cs" />
-    <Compile Include="IdTypePaire.cs" />
-    <Compile Include="NameIdPair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V2\EventOffersClient.cs" />
+    <Compile Include="V2\IEventOffersClient.cs" />
+    <Compile Include="V2\Models\EventMapping.cs" />
+    <Compile Include="V2\Models\EventOffers.cs" />
+    <Compile Include="V2\Models\Limits.cs" />
+    <Compile Include="V2\Models\Offer.cs" />
+    <Compile Include="V2\Models\Price.cs" />
+    <Compile Include="V2\Models\Prices.cs" />
+    <Compile Include="V2\Models\Relationships.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\Ticketmaster.Core\Ticketmaster.Core.csproj">
+      <Project>{fc6a6ee2-2003-416a-83a2-33d8d89143b4}</Project>
+      <Name>Ticketmaster.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System.Collections.Generic;
+
     public class SearchVenuesRequest : BaseQuery<SearchVenuesQueryParameters>
     {
         public override void AddQueryParameter(KeyValuePair<SearchVenuesQueryParameters, string> parameter)

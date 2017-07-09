@@ -1,41 +1,41 @@
-﻿using System.Collections.Generic;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System.Collections.Generic;
+
     /// <summary>
-    /// The Segment class.
+    ///     The Segment class.
     /// </summary>
     public class Segment
     {
         /// <summary>
-        /// Gets or sets the identifier.
+        ///     Gets or sets the identifier.
         /// </summary>
         /// <value>
-        /// The identifier.
+        ///     The identifier.
         /// </value>
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the links.
+        ///     Gets or sets the links.
         /// </summary>
         /// <value>
-        /// The links.
+        ///     The links.
         /// </value>
         public Links Links { get; set; }
 
         /// <summary>
-        /// Gets or sets the embedded.
+        ///     Gets or sets the embedded.
         /// </summary>
         /// <value>
-        /// The <see cref="Embedded"/> embedded.
+        ///     The <see cref="Embedded" /> embedded.
         /// </value>
         public Embedded _embedded { get; set; }
 
@@ -47,7 +47,6 @@ namespace TM.Discovery.V2.Models
             }
 
             public List<Genre> Genres { get; set; }
-
         }
     }
 }

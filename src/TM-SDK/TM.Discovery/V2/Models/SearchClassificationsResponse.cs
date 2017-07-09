@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using TM.Discovery.V2.Models;
-
-namespace TM.Discovery.V2
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System.Collections.Generic;
+
     public class SearchClassificationsResponse : IDiscoveryApiRespond
     {
         public Embedded _embedded { get; set; }
@@ -16,6 +15,7 @@ namespace TM.Discovery.V2
             {
                 Classifications = new List<Classification>();
             }
+
             public List<Classification> Classifications { get; set; }
         }
     }

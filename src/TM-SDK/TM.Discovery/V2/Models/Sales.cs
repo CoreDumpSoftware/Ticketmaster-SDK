@@ -1,16 +1,15 @@
-﻿
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     /// <summary>
-    /// The Sales class.
+    ///     The Sales class.
     /// </summary>
     public class Sales
     {
         /// <summary>
-        /// Gets or sets the public.
+        ///     Gets or sets the public.
         /// </summary>
         /// <value>
-        /// The <see cref="Public"/> public.
+        ///     The <see cref="Public" /> public.
         /// </value>
         public Public Public { get; set; }
     }

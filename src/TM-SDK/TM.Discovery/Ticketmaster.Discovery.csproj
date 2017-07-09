@@ -8,8 +8,8 @@
     <ProjectGuid>{978DC54B-CF8C-4630-8FAF-908273D06332}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TM.Discovery</RootNamespace>
-    <AssemblyName>TM.Discovery</AssemblyName>
+    <RootNamespace>Ticketmaster.Discovery</RootNamespace>
+    <AssemblyName>Ticketmaster.Discovery</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>9069a016</NuGetPackageImportStamp>

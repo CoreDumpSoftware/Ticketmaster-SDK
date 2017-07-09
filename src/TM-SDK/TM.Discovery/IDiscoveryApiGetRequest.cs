@@ -1,4 +1,4 @@
-﻿namespace TM.Discovery
+﻿namespace Ticketmaster.Discovery
 {
     public interface IDiscoveryApiGetRequest : IDiscoveryApiRequest
     {

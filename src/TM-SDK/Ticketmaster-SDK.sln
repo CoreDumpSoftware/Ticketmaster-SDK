@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Discovery", "TM.Discovery\TM.Discovery.csproj", "{978DC54B-CF8C-4630-8FAF-908273D06332}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery", "TM.Discovery\Ticketmaster.Discovery.csproj", "{978DC54B-CF8C-4630-8FAF-908273D06332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Discovery.Tests", "TM.Discovery.Tests\TM.Discovery.Tests.csproj", "{34597214-9972-4853-87C9-F3AD66C4F478}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery.Tests", "TM.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{34597214-9972-4853-87C9-F3AD66C4F478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

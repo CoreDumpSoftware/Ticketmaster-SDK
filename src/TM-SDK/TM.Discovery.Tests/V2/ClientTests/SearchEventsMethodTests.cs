@@ -1,32 +1,29 @@
-﻿using NSubstitute;
-using Ploeh.AutoFixture;
-using RestSharp;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using TM.Discovery.V2;
-using TM.Discovery.V2.Models;
-using Xunit;
-
-namespace TM.Discovery.Tests.V2.ClientTests
+﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Threading.Tasks;
+    using Discovery.V2;
+    using Discovery.V2.Models;
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using RestSharp;
+    using Xunit;
+
     public class SearchEventsMethodTests : MethodTest
     {
-        private readonly EventsClient _sut;
-        private readonly SearchEventsResponse _searchEventsResponse;
-
         public SearchEventsMethodTests()
         {
             _searchEventsResponse = Fixture.Create<SearchEventsResponse>();
             Client
-                   .ExecuteTaskAsync<SearchEventsResponse>(Arg.Any<IRestRequest>())
-                   .Returns(new RestResponse<SearchEventsResponse>
-                   {
-                       Data = _searchEventsResponse,
-                       StatusCode = HttpStatusCode.OK
-                   });
+                .ExecuteTaskAsync<SearchEventsResponse>(Arg.Any<IRestRequest>())
+                .Returns(new RestResponse<SearchEventsResponse>
+                {
+                    Data = _searchEventsResponse,
+                    StatusCode = HttpStatusCode.OK
+                });
             Client
                 .ExecuteTaskAsync(Arg.Any<IRestRequest>())
                 .Returns(new RestResponse
@@ -37,15 +34,8 @@ namespace TM.Discovery.Tests.V2.ClientTests
             _sut = new EventsClient(Client, Config);
         }
 
-        [Fact]
-        public async Task CallSearchEventsAsync_ShouldReturnIRestResponse()
-        {
-            var response = await _sut.CallSearchEventsAsync(new SearchEventsRequest());
-            Assert.NotNull(response);
-            Assert.IsType<RestResponse>(response);
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-            Assert.NotNull(response.Content);
-        }
+        private readonly EventsClient _sut;
+        private readonly SearchEventsResponse _searchEventsResponse;
 
         [Theory]
         [InlineData(HttpStatusCode.Accepted)]
@@ -64,25 +54,13 @@ namespace TM.Discovery.Tests.V2.ClientTests
         public async Task SearchEventsAsync_ShouldThrowException_WhenResponseCodeNotOk(HttpStatusCode statusCode)
         {
             Client
-               .ExecuteTaskAsync<SearchEventsResponse>(Arg.Any<IRestRequest>())
-                   .Returns(new RestResponse<SearchEventsResponse>
-                   {
-                       StatusCode = statusCode
-                   });
+                .ExecuteTaskAsync<SearchEventsResponse>(Arg.Any<IRestRequest>())
+                .Returns(new RestResponse<SearchEventsResponse>
+                {
+                    StatusCode = statusCode
+                });
 
             await Assert.ThrowsAnyAsync<InvalidDataException>(() => _sut.SearchEventsAsync(new SearchEventsRequest()));
-        }
-
-        [Fact]
-        public async Task SearchEventsAsync_ShouldReturnParsedRespond_WhenStatusCodeIsHttpStatusCodeOK()
-        {
-            var result = await _sut.SearchEventsAsync(new SearchEventsRequest());
-
-            Assert.NotNull(result);
-            Assert.NotNull(result.Links);
-            Assert.NotNull(result._embedded);
-            Assert.NotNull(result.Page);
-            Assert.Equal(_searchEventsResponse, result);
         }
 
         [Theory]
@@ -99,7 +77,8 @@ namespace TM.Discovery.Tests.V2.ClientTests
         [InlineData(SearchEventsQueryParameters.size, "1")]
         [InlineData(SearchEventsQueryParameters.page, "1")]
         [InlineData(SearchEventsQueryParameters.geoPoint, "9q5cgq7tn")]
-        public async Task SearchEventsAsync_ShouldBuildRequestWithQueryParameters(SearchEventsQueryParameters key, string value)
+        public async Task SearchEventsAsync_ShouldBuildRequestWithQueryParameters(SearchEventsQueryParameters key,
+            string value)
         {
             var request = new SearchEventsRequest();
             request.AddQueryParameter(new KeyValuePair<SearchEventsQueryParameters, string>(key, value));
@@ -110,7 +89,30 @@ namespace TM.Discovery.Tests.V2.ClientTests
                 .Received()
                 .ExecuteTaskAsync<SearchEventsResponse>(
                     Arg.Is<RestRequest>(
-                        restRequest => restRequest.Parameters.Any(p => p.Name == key.ToString() && Equals(p.Value, value))));
+                        restRequest => restRequest.Parameters.Any(
+                            p => p.Name == key.ToString() && Equals(p.Value, value))));
+        }
+
+        [Fact]
+        public async Task CallSearchEventsAsync_ShouldReturnIRestResponse()
+        {
+            var response = await _sut.CallSearchEventsAsync(new SearchEventsRequest());
+            Assert.NotNull(response);
+            Assert.IsType<RestResponse>(response);
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.NotNull(response.Content);
+        }
+
+        [Fact]
+        public async Task SearchEventsAsync_ShouldReturnParsedRespond_WhenStatusCodeIsHttpStatusCodeOK()
+        {
+            var result = await _sut.SearchEventsAsync(new SearchEventsRequest());
+
+            Assert.NotNull(result);
+            Assert.NotNull(result.Links);
+            Assert.NotNull(result._embedded);
+            Assert.NotNull(result.Page);
+            Assert.Equal(_searchEventsResponse, result);
         }
     }
 }

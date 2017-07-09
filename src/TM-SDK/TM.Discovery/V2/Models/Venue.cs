@@ -1,10 +1,9 @@
-﻿
-using System.Collections.Generic;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System.Collections.Generic;
+
     /// <summary>
-    /// The Venues class for current event.
+    ///     The Venues class for current event.
     /// </summary>
     public class Venue : BaseEvent, IDiscoveryApiRespond
     {
@@ -16,66 +15,66 @@ namespace TM.Discovery.V2.Models
         public string Timezone { get; set; }
 
         /// <summary>
-        /// Gets or sets the postal code.
+        ///     Gets or sets the postal code.
         /// </summary>
         /// <value>
-        /// The postal code.
+        ///     The postal code.
         /// </value>
         public string PostalCode { get; set; }
 
         /// <summary>
-        /// Gets or sets the city.
+        ///     Gets or sets the city.
         /// </summary>
         /// <value>
-        /// The <see cref="Models.City"/> city.
+        ///     The <see cref="Models.City" /> city.
         /// </value>
         public City City { get; set; }
 
         /// <summary>
-        /// Gets or sets the state.
+        ///     Gets or sets the state.
         /// </summary>
         /// <value>
-        /// The <see cref="Models.State"/> state.
+        ///     The <see cref="Models.State" /> state.
         /// </value>
         public State State { get; set; }
 
         /// <summary>
-        /// Gets or sets the country.
+        ///     Gets or sets the country.
         /// </summary>
         /// <value>
-        /// The <see cref="Models.Country"/> country.
+        ///     The <see cref="Models.Country" /> country.
         /// </value>
         public Country Country { get; set; }
 
         /// <summary>
-        /// Gets or sets the address.
+        ///     Gets or sets the address.
         /// </summary>
         /// <value>
-        /// The <see cref="Models.Address"/> address.
+        ///     The <see cref="Models.Address" /> address.
         /// </value>
         public Address Address { get; set; }
 
         /// <summary>
-        /// Gets or sets the location.
+        ///     Gets or sets the location.
         /// </summary>
         /// <value>
-        /// The <see cref="Models.Location"/> location.
+        ///     The <see cref="Models.Location" /> location.
         /// </value>
         public Location Location { get; set; }
 
         /// <summary>
-        /// Gets or sets the _links.
+        ///     Gets or sets the _links.
         /// </summary>
         /// <value>
-        /// The <see cref="Models.Links"/> _links.
+        ///     The <see cref="Models.Links" /> _links.
         /// </value>
         public Links Links { get; set; }
 
         /// <summary>
-        /// Gets or sets the markets.
+        ///     Gets or sets the markets.
         /// </summary>
         /// <value>
-        /// The markets.
+        ///     The markets.
         /// </value>
         public List<Market> Markets { get; set; }
     }

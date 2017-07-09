@@ -1,20 +1,16 @@
-﻿
-using NSubstitute;
-using Ploeh.AutoFixture;
-using RestSharp;
-using System.Net;
-using System.Threading.Tasks;
-using TM.Discovery.V2;
-using TM.Discovery.V2.Models;
-using Xunit;
-
-namespace TM.Discovery.Tests.V2.ClientTests
+﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
+    using System.Net;
+    using System.Threading.Tasks;
+    using Discovery.V2;
+    using Discovery.V2.Models;
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using RestSharp;
+    using Xunit;
+
     public class SearchVenuesMethodTests : MethodTest
     {
-        private readonly VenuesClient _sut;
-        private readonly SearchVenuesResponse _response;
-
         public SearchVenuesMethodTests()
         {
             _response = Fixture.Create<SearchVenuesResponse>();
@@ -35,13 +31,8 @@ namespace TM.Discovery.Tests.V2.ClientTests
             _sut = new VenuesClient(Client, Config);
         }
 
-        [Fact]
-        public async Task SearchVenuesAsync_ShouldReturnSearchVenuesResponse()
-        {
-            var response = await _sut.SearchVenuesAsync(new SearchVenuesRequest());
-            Assert.NotNull(response);
-            Assert.Equal(_response, response);
-        }
+        private readonly VenuesClient _sut;
+        private readonly SearchVenuesResponse _response;
 
         [Fact]
         public async Task CallSearchVenuesAsync_ShouldReturnSearchVenuesResponse()
@@ -50,6 +41,14 @@ namespace TM.Discovery.Tests.V2.ClientTests
             Assert.NotNull(response);
             Assert.Equal(_response.ToString(), response.Content);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+
+        [Fact]
+        public async Task SearchVenuesAsync_ShouldReturnSearchVenuesResponse()
+        {
+            var response = await _sut.SearchVenuesAsync(new SearchVenuesRequest());
+            Assert.NotNull(response);
+            Assert.Equal(_response, response);
         }
     }
 }

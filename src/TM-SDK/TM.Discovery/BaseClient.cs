@@ -1,13 +1,13 @@
-﻿using RestSharp;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TM.Discovery
+﻿namespace Ticketmaster.Discovery
 {
+    using System.IO;
+    using System.Net;
+    using System.Text;
+    using System.Threading.Tasks;
+    using RestSharp;
+
     /// <summary>
-    /// The BaseClient class.
+    ///     The BaseClient class.
     /// </summary>
     public abstract class BaseClient
     {
@@ -23,11 +23,12 @@ namespace TM.Discovery
         }
 
         /// <summary>
-        /// Validates the response.
+        ///     Validates the response.
         /// </summary>
         /// <param name="response">The response.</param>
-        /// <param name="expectedCode">The <see cref="HttpStatusCode"/>.</param>
-        /// Throw <exception cref="System.IO.InvalidDataException"> when StatusCode not expected.</exception>
+        /// <param name="expectedCode">The <see cref="HttpStatusCode" />.</param>
+        /// Throw
+        /// <exception cref="System.IO.InvalidDataException"> when StatusCode not expected.</exception>
         protected virtual void ValidateResponse(IRestResponse response, HttpStatusCode expectedCode)
         {
             if (response.StatusCode == expectedCode) return;
@@ -40,28 +41,26 @@ namespace TM.Discovery
         }
 
         /// <summary>
-        /// Adds the Query to request.
+        ///     Adds the Query to request.
         /// </summary>
-        /// <param name="request">The <see cref="IRestRequest"/> request.</param>
-        /// <param name="query">The <see cref="IDiscoveryApiRequest"/> query.</param>
+        /// <param name="request">The <see cref="IRestRequest" /> request.</param>
+        /// <param name="query">The <see cref="IDiscoveryApiRequest" /> query.</param>
         protected virtual void AddQuiriesToRequest(ref IRestRequest request, IDiscoveryApiRequest query)
         {
             if (query == null) return;
 
             foreach (var parameter in query.QueryParameters)
-            {
                 request.AddParameter(parameter.Key, parameter.Value, ParameterType.QueryString);
-            }
             request.AddParameter("apikey", _config.ConsumerKey, ParameterType.QueryString);
         }
 
         /// <summary>
-        /// Executes the request asynchronous.
+        ///     Executes the request asynchronous.
         /// </summary>
         /// <typeparam name="T">Type of expected response.</typeparam>
         /// <param name="request">The request.</param>
         /// <param name="expectedStatusCode">The expected status code.</param>
-        /// <param name="query">The <see cref="IDiscoveryApiRequest"/>.</param>
+        /// <param name="query">The <see cref="IDiscoveryApiRequest" />.</param>
         /// <returns></returns>
         protected virtual async Task<T> ExecuteRequestAsync<T>(
             IRestRequest request,
@@ -76,11 +75,11 @@ namespace TM.Discovery
         }
 
         /// <summary>
-        /// Executes the request asynchronous.
+        ///     Executes the request asynchronous.
         /// </summary>
         /// <param name="request">The request.</param>
-        /// <param name="query">The <see cref="BaseQuery"/> query.</param>
-        /// <returns>The <see cref="IRestResponse"/> object.</returns>
+        /// <param name="query">The <see cref="BaseQuery" /> query.</param>
+        /// <returns>The <see cref="IRestResponse" /> object.</returns>
         protected virtual async Task<IRestResponse> ExecuteRequestAsync(
             IRestRequest request,
             IDiscoveryApiRequest query = null)

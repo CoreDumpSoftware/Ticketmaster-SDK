@@ -1,5 +1,4 @@
-﻿
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     public class City
     {

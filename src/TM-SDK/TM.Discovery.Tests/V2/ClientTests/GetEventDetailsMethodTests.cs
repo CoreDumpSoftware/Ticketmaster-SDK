@@ -1,21 +1,17 @@
-﻿using NSubstitute;
-using Ploeh.AutoFixture;
-using RestSharp;
-using System.IO;
-using System.Net;
-using System.Threading.Tasks;
-using TM.Discovery.V2;
-using TM.Discovery.V2.Models;
-using Xunit;
-
-namespace TM.Discovery.Tests.V2.ClientTests
+﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
+    using System.IO;
+    using System.Net;
+    using System.Threading.Tasks;
+    using Discovery.V2;
+    using Discovery.V2.Models;
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using RestSharp;
+    using Xunit;
+
     public class GetEventDetailsMethodTests : MethodTest
     {
-
-        private readonly EventsClient _sut;
-        private readonly Event _expectedResult;
-
         public GetEventDetailsMethodTests()
         {
             var fixture = new Fixture();
@@ -23,12 +19,12 @@ namespace TM.Discovery.Tests.V2.ClientTests
 
 
             Client
-               .ExecuteTaskAsync<Event>(Arg.Any<IRestRequest>())
-               .Returns(new RestResponse<Event>
-               {
-                   Data = _expectedResult,
-                   StatusCode = HttpStatusCode.OK
-               });
+                .ExecuteTaskAsync<Event>(Arg.Any<IRestRequest>())
+                .Returns(new RestResponse<Event>
+                {
+                    Data = _expectedResult,
+                    StatusCode = HttpStatusCode.OK
+                });
             Client
                 .ExecuteTaskAsync(Arg.Any<IRestRequest>())
                 .Returns(new RestResponse
@@ -38,6 +34,9 @@ namespace TM.Discovery.Tests.V2.ClientTests
                 });
             _sut = new EventsClient(Client, Config);
         }
+
+        private readonly EventsClient _sut;
+        private readonly Event _expectedResult;
 
         [Theory]
         [InlineData(HttpStatusCode.Accepted)]
@@ -56,23 +55,14 @@ namespace TM.Discovery.Tests.V2.ClientTests
         public async Task GetEventDetailsAsync_ShouldThrowException_WhenResponseCodeNotOk(HttpStatusCode statusCode)
         {
             Client
-               .ExecuteTaskAsync<Event>(Arg.Any<IRestRequest>())
-                   .Returns(new RestResponse<Event>
-                   {
-                       StatusCode = statusCode
-                   });
+                .ExecuteTaskAsync<Event>(Arg.Any<IRestRequest>())
+                .Returns(new RestResponse<Event>
+                {
+                    StatusCode = statusCode
+                });
 
-            await Assert.ThrowsAnyAsync<InvalidDataException>(() => _sut.GetEventDetailsAsync(new GetRequest("invalid id")));
-
-
-        }
-
-        [Fact]
-        public async Task GetEventDetailsAsync_ShouldReturnEvent_IfEventExist()
-        {
-            var response = await _sut.GetEventDetailsAsync(new GetRequest("Z1lMVSyiJynZ177dJa"));
-            Assert.NotNull(response);
-            Assert.Equal(_expectedResult, response);
+            await Assert.ThrowsAnyAsync<InvalidDataException>(
+                () => _sut.GetEventDetailsAsync(new GetRequest("invalid id")));
         }
 
         [Fact]
@@ -83,6 +73,14 @@ namespace TM.Discovery.Tests.V2.ClientTests
             Assert.IsType<RestResponse>(response);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
             Assert.NotNull(response.Content);
+        }
+
+        [Fact]
+        public async Task GetEventDetailsAsync_ShouldReturnEvent_IfEventExist()
+        {
+            var response = await _sut.GetEventDetailsAsync(new GetRequest("Z1lMVSyiJynZ177dJa"));
+            Assert.NotNull(response);
+            Assert.Equal(_expectedResult, response);
         }
     }
 }

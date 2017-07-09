@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System;
+
     public class End
     {
         public DateTime DateTime { get; set; }

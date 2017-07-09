@@ -1,16 +1,15 @@
-﻿
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     /// <summary>
-    /// The Status class.
+    ///     The Status class.
     /// </summary>
     public class Status
     {
         /// <summary>
-        /// Gets or sets the code.
+        ///     Gets or sets the code.
         /// </summary>
         /// <value>
-        /// The code.
+        ///     The code.
         /// </value>
         public string Code { get; set; }
     }

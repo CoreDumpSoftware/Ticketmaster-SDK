@@ -1,24 +1,23 @@
-﻿
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     /// <summary>
-    /// The Location class.
+    ///     The Location class.
     /// </summary>
     public class Location
     {
         /// <summary>
-        /// Gets or sets the longitude.
+        ///     Gets or sets the longitude.
         /// </summary>
         /// <value>
-        /// The longitude.
+        ///     The longitude.
         /// </value>
         public string Longitude { get; set; }
 
         /// <summary>
-        /// Gets or sets the latitude.
+        ///     Gets or sets the latitude.
         /// </summary>
         /// <value>
-        /// The latitude.
+        ///     The latitude.
         /// </value>
         public string Latitude { get; set; }
     }

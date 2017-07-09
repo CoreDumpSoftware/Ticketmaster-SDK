@@ -1,28 +1,28 @@
-﻿namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     public class SubGenre
     {
         /// <summary>
-        /// Gets or sets the identifier.
+        ///     Gets or sets the identifier.
         /// </summary>
         /// <value>
-        /// The identifier.
+        ///     The identifier.
         /// </value>
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the links.
+        ///     Gets or sets the links.
         /// </summary>
         /// <value>
-        /// The <see cref="Links"/> links.
+        ///     The <see cref="Links" /> links.
         /// </value>
         public Links Links { get; set; }
     }

@@ -8,8 +8,8 @@
     <ProjectGuid>{34597214-9972-4853-87C9-F3AD66C4F478}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TM.Discovery.Tests</RootNamespace>
-    <AssemblyName>TM.Discovery.Tests</AssemblyName>
+    <RootNamespace>Ticketmaster.Discovery.Tests</RootNamespace>
+    <AssemblyName>Ticketmaster.Discovery.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>1740c735</NuGetPackageImportStamp>
@@ -91,9 +91,9 @@
     <Compile Include="V2\MethodTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TM.Discovery\TM.Discovery.csproj">
+    <ProjectReference Include="..\TM.Discovery\Ticketmaster.Discovery.csproj">
       <Project>{978dc54b-cf8c-4630-8faf-908273d06332}</Project>
-      <Name>TM.Discovery</Name>
+      <Name>Ticketmaster.Discovery</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

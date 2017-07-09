@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System.Collections.Generic;
+
     /// <summary>
-    /// The Links class.
+    ///     The Links class.
     /// </summary>
     public class Links
     {
@@ -13,26 +13,26 @@ namespace TM.Discovery.V2.Models
         }
 
         /// <summary>
-        /// Gets or sets the self link string.
+        ///     Gets or sets the self link string.
         /// </summary>
         /// <value>
-        /// The self link.
+        ///     The self link.
         /// </value>
         public Link Self { get; set; }
 
         /// <summary>
-        /// Gets or sets the link for next.
+        ///     Gets or sets the link for next.
         /// </summary>
         /// <value>
-        /// The next link.
+        ///     The next link.
         /// </value>
         public Link Next { get; set; }
 
         /// <summary>
-        /// Gets or sets the venues.
+        ///     Gets or sets the venues.
         /// </summary>
         /// <value>
-        /// The venues.
+        ///     The venues.
         /// </value>
         public List<Link> Venues { get; set; }
     }

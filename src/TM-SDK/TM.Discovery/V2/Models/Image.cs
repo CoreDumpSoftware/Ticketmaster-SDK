@@ -1,48 +1,47 @@
-﻿
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     /// <summary>
-    /// The Image class model.
+    ///     The Image class model.
     /// </summary>
     public class Image
     {
         /// <summary>
-        /// Gets or sets the ratio.
+        ///     Gets or sets the ratio.
         /// </summary>
         /// <value>
-        /// The ratio.
+        ///     The ratio.
         /// </value>
         public string Ratio { get; set; }
 
         /// <summary>
-        /// Gets or sets the URL.
+        ///     Gets or sets the URL.
         /// </summary>
         /// <value>
-        /// The URL.
+        ///     The URL.
         /// </value>
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or sets the width.
+        ///     Gets or sets the width.
         /// </summary>
         /// <value>
-        /// The width.
+        ///     The width.
         /// </value>
         public int Width { get; set; }
 
         /// <summary>
-        /// Gets or sets the height.
+        ///     Gets or sets the height.
         /// </summary>
         /// <value>
-        /// The height.
+        ///     The height.
         /// </value>
         public int Height { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="Image"/> is fallback.
+        ///     Gets or sets a value indicating whether this <see cref="Image" /> is fallback.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if fallback; otherwise, <c>false</c>.
+        ///     <c>true</c> if fallback; otherwise, <c>false</c>.
         /// </value>
         public bool Fallback { get; set; }
     }

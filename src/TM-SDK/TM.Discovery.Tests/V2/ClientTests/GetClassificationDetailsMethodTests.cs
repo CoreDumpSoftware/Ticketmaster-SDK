@@ -1,19 +1,16 @@
-﻿using NSubstitute;
-using Ploeh.AutoFixture;
-using RestSharp;
-using System.Net;
-using System.Threading.Tasks;
-using TM.Discovery.V2;
-using TM.Discovery.V2.Models;
-using Xunit;
-
-namespace TM.Discovery.Tests.V2.ClientTests
+﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
+    using System.Net;
+    using System.Threading.Tasks;
+    using Discovery.V2;
+    using Discovery.V2.Models;
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using RestSharp;
+    using Xunit;
+
     public class GetClassificationDetailsMethodTests : MethodTest
     {
-        private readonly ClassificationsClient _sut;
-        private readonly Classification _classification;
-
         public GetClassificationDetailsMethodTests()
         {
             _classification = Fixture.Create<Classification>();
@@ -21,10 +18,10 @@ namespace TM.Discovery.Tests.V2.ClientTests
             Client
                 .ExecuteTaskAsync<Classification>(Arg.Any<IRestRequest>())
                 .Returns(new RestResponse<Classification>
-                    {
-                        Data = _classification,
-                        StatusCode = HttpStatusCode.OK
-                    });
+                {
+                    Data = _classification,
+                    StatusCode = HttpStatusCode.OK
+                });
 
             Client
                 .ExecuteTaskAsync(Arg.Any<IRestRequest>())
@@ -37,12 +34,8 @@ namespace TM.Discovery.Tests.V2.ClientTests
             _sut = new ClassificationsClient(Client, Config);
         }
 
-        [Fact]
-        public async Task GetClassificationDetailsAsync_ShouldReturnClassification()
-        {
-            var result = await _sut.GetClassificationDetailsAsync(new GetRequest(""));
-            Assert.Equal(_classification, result);
-        }
+        private readonly ClassificationsClient _sut;
+        private readonly Classification _classification;
 
         [Fact]
         public async Task CallGetClassificationDetailsAsync_ShouldReturnIRestResponse()
@@ -53,5 +46,11 @@ namespace TM.Discovery.Tests.V2.ClientTests
             Assert.Equal(_classification.ToString(), result.Content);
         }
 
+        [Fact]
+        public async Task GetClassificationDetailsAsync_ShouldReturnClassification()
+        {
+            var result = await _sut.GetClassificationDetailsAsync(new GetRequest(""));
+            Assert.Equal(_classification, result);
+        }
     }
 }

@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System.Collections.Generic;
+
     public class GetEventImagesResponse : IDiscoveryApiRespond
     {
         public string Type { get; set; }

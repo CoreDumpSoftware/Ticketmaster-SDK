@@ -1,13 +1,13 @@
-﻿using NSubstitute;
-using Ploeh.AutoFixture;
-using RestSharp;
-
-namespace TM.Discovery.Tests.V2
+﻿namespace Ticketmaster.Discovery.Tests.V2
 {
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using RestSharp;
+
     public abstract class MethodTest
     {
-        protected readonly IClientConfig Config;
         protected readonly IRestClient Client;
+        protected readonly IClientConfig Config;
         protected readonly Fixture Fixture;
 
         protected MethodTest()

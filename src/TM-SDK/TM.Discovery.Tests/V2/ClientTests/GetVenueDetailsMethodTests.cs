@@ -1,30 +1,26 @@
-﻿
-using NSubstitute;
-using Ploeh.AutoFixture;
-using RestSharp;
-using System.Net;
-using System.Threading.Tasks;
-using TM.Discovery.V2;
-using TM.Discovery.V2.Models;
-using Xunit;
-
-namespace TM.Discovery.Tests.V2.ClientTests
+﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
+    using System.Net;
+    using System.Threading.Tasks;
+    using Discovery.V2;
+    using Discovery.V2.Models;
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using RestSharp;
+    using Xunit;
+
     public class GetVenueDetailsMethodTests : MethodTest
     {
-        private readonly VenuesClient _sut;
-        private readonly Venue _venue;
-
         public GetVenueDetailsMethodTests()
         {
             _venue = Fixture.Create<Venue>();
             Client
-               .ExecuteTaskAsync<Venue>(Arg.Any<IRestRequest>())
-               .Returns(new RestResponse<Venue>
-               {
-                   Data = _venue,
-                   StatusCode = HttpStatusCode.OK
-               });
+                .ExecuteTaskAsync<Venue>(Arg.Any<IRestRequest>())
+                .Returns(new RestResponse<Venue>
+                {
+                    Data = _venue,
+                    StatusCode = HttpStatusCode.OK
+                });
             Client
                 .ExecuteTaskAsync(Arg.Any<IRestRequest>())
                 .Returns(new RestResponse
@@ -35,12 +31,8 @@ namespace TM.Discovery.Tests.V2.ClientTests
             _sut = new VenuesClient(Client, Config);
         }
 
-        [Fact]
-        public async Task GetVenueDetailsAsync_ShouldReturnClassification()
-        {
-            var result = await _sut.GetVenueDetailsAsync(new GetRequest(""));
-            Assert.Equal(_venue, result);
-        }
+        private readonly VenuesClient _sut;
+        private readonly Venue _venue;
 
         [Fact]
         public async Task CallGetVenueDetailsAsync_ShouldReturnIRestResponse()
@@ -49,6 +41,13 @@ namespace TM.Discovery.Tests.V2.ClientTests
             Assert.NotNull(result);
             Assert.IsType<RestResponse>(result);
             Assert.Equal(_venue.ToString(), result.Content);
+        }
+
+        [Fact]
+        public async Task GetVenueDetailsAsync_ShouldReturnClassification()
+        {
+            var result = await _sut.GetVenueDetailsAsync(new GetRequest(""));
+            Assert.Equal(_venue, result);
         }
     }
 }

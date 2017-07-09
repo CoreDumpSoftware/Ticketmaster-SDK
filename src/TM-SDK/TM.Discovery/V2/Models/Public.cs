@@ -1,33 +1,33 @@
-﻿using System;
-
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
+    using System;
+
     /// <summary>
-    /// The class for public information for sales.
+    ///     The class for public information for sales.
     /// </summary>
     public class Public
     {
         /// <summary>
-        /// Gets or sets the start date time.
+        ///     Gets or sets the start date time.
         /// </summary>
         /// <value>
-        /// The start date time.
+        ///     The start date time.
         /// </value>
         public DateTime StartDateTime { get; set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether [start TBD].
+        ///     Gets or sets a value indicating whether [start TBD].
         /// </summary>
         /// <value>
-        ///   <c>true</c> if [start TBD]; otherwise, <c>false</c>.
+        ///     <c>true</c> if [start TBD]; otherwise, <c>false</c>.
         /// </value>
         public bool StartTbd { get; set; }
 
         /// <summary>
-        /// Gets or sets the end date time.
+        ///     Gets or sets the end date time.
         /// </summary>
         /// <value>
-        /// The end date time.
+        ///     The end date time.
         /// </value>
         public DateTime EndDateTime { get; set; }
     }

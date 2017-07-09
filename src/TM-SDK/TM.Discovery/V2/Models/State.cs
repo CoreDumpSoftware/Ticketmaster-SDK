@@ -1,24 +1,23 @@
-﻿
-namespace TM.Discovery.V2.Models
+﻿namespace Ticketmaster.Discovery.V2.Models
 {
     /// <summary>
-    /// The State information.
+    ///     The State information.
     /// </summary>
     public class State
     {
         /// <summary>
-        /// Gets or sets the name.
+        ///     Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name.
+        ///     The name.
         /// </value>
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the state code.
+        ///     Gets or sets the state code.
         /// </summary>
         /// <value>
-        /// The state code.
+        ///     The state code.
         /// </value>
         public string StateCode { get; set; }
     }

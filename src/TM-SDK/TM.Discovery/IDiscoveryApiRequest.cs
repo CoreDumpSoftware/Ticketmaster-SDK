@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace TM.Discovery
+﻿namespace Ticketmaster.Discovery
 {
+    using System.Collections.Generic;
+
     public interface IDiscoveryApiRequest
     {
         IEnumerable<KeyValuePair<string, string>> QueryParameters { get; }

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\xunit.core.2.1.0\build\portable-net45+win8+wp8+wpa81\xunit.core.props" Condition="Exists('..\packages\xunit.core.2.1.0\build\portable-net45+win8+wp8+wpa81\xunit.core.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{978DC54B-CF8C-4630-8FAF-908273D06332}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ticketmaster.Discovery</RootNamespace>
+    <AssemblyName>Ticketmaster.Discovery</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>9069a016</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V2\IVenuesClient.cs" />
+    <Compile Include="V2\Models\Address.cs" />
+    <Compile Include="V2\Models\Attraction.cs" />
+    <Compile Include="V2\AttractionsClient.cs" />
+    <Compile Include="V2\Models\BaseEvent.cs" />
+    <Compile Include="V2\Models\City.cs" />
+    <Compile Include="V2\Models\Classification.cs" />
+    <Compile Include="V2\ClassificationsClient.cs" />
+    <Compile Include="V2\Models\Country.cs" />
+    <Compile Include="V2\Models\Dates.cs" />
+    <Compile Include="V2\Models\End.cs" />
+    <Compile Include="V2\Models\Event.cs" />
+    <Compile Include="V2\EventsClient.cs" />
+    <Compile Include="V2\Models\Genre.cs" />
+    <Compile Include="V2\Models\GetEventImagesResponse.cs" />
+    <Compile Include="V2\IAttractionsClient.cs" />
+    <Compile Include="V2\IClassificationsClient.cs" />
+    <Compile Include="V2\IEventsClient.cs" />
+    <Compile Include="V2\Models\Market.cs" />
+    <Compile Include="V2\Models\QueryParameters.cs" />
+    <Compile Include="V2\Models\SearchAttractionsRequest.cs" />
+    <Compile Include="V2\Models\SearchAttractionsResponse.cs" />
+    <Compile Include="V2\Models\SearchClassificationsRequest.cs" />
+    <Compile Include="V2\Models\SearchClassificationsResponse.cs" />
+    <Compile Include="V2\Models\SearchEventsRequest.cs" />
+    <Compile Include="V2\Models\SearchEventsResponse.cs" />
+    <Compile Include="V2\Models\Image.cs" />
+    <Compile Include="V2\Models\Link.cs" />
+    <Compile Include="V2\Models\Links.cs" />
+    <Compile Include="V2\Models\Location.cs" />
+    <Compile Include="V2\Models\Page.cs" />
+    <Compile Include="V2\Models\Public.cs" />
+    <Compile Include="V2\Models\Sales.cs" />
+    <Compile Include="V2\Models\SearchVenuesQueryParameters.cs" />
+    <Compile Include="V2\Models\SearchVenuesRequest.cs" />
+    <Compile Include="V2\Models\SearchVenuesResponse.cs" />
+    <Compile Include="V2\Models\Segment.cs" />
+    <Compile Include="V2\Models\Start.cs" />
+    <Compile Include="V2\Models\State.cs" />
+    <Compile Include="V2\Models\Status.cs" />
+    <Compile Include="V2\Models\SubGenre.cs" />
+    <Compile Include="V2\Models\Venue.cs" />
+    <Compile Include="V2\Models\SearchEventsQueryParameters.cs" />
+    <Compile Include="V2\VenuesClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ticketmaster.Core\Ticketmaster.Core.csproj">
+      <Project>{fc6a6ee2-2003-416a-83a2-33d8d89143b4}</Project>
+      <Name>Ticketmaster.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\xunit.core.2.1.0\build\portable-net45+win8+wp8+wpa81\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.core.2.1.0\build\portable-net45+win8+wp8+wpa81\xunit.core.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

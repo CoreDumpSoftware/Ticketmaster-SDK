@@ -1,16 +1,30 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>fc6a6ee2-2003-416a-83a2-33d8d89143b4</id>
+    <version>1.0.0.0</version>
+    <title>Ticketmaster.Core</title>
+    <authors>Serhii Voznyi</authors>
+    <owners>Serhii Voznyi</owners>
     <licenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</projectUrl>
     <iconUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/Ticketmaster.jpg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>
+      The Ticketmaster.Core solution contains components such ass common client interfaces:
+      * IClientConfig - interface for client configuration;
+      * IApiRequest - interface for api requests classes;
+      * IApiGetRequest - interface inherited from IApiRequest created for api GET requests classes;
+      * IApiRespond - interface for Api responses;
+
+      Base Implementation for Api Clients BaseClient, and for queering  BaseQuery, GetRequest.
+
+      This common models components to serialize response data:
+      * NameIdPair
+      * IdTypePaire
+      * IdTypePairCollectionData
+      * CurrencyValuePair
+    </description>
     <releaseNotes>
       This is Core components for Ticketmaster SDKs.
     </releaseNotes>

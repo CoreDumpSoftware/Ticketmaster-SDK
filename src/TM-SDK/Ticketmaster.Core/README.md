@@ -3,7 +3,7 @@
 This package contains common components for Ticketmaster SDK's
 ___
 ### Description
-Such ass common client interfaces:
+The Ticketmaster.Core solution contains components such ass common client interfaces:
 * __IClientConfig__ - interface for client configuration;
 * __IApiRequest__ - interface for api requests classes;
 * __IApiGetRequest__ - interface inherited from IApiRequest created for api GET requests classes;

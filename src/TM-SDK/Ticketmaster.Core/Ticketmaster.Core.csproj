@@ -53,9 +53,9 @@
     <Compile Include="CurrencyValuePair.cs" />
     <Compile Include="GetRequest.cs" />
     <Compile Include="IClientConfig.cs" />
-    <Compile Include="IDiscoveryApiGetRequest.cs" />
-    <Compile Include="IDiscoveryApiRequest.cs" />
-    <Compile Include="IDiscoveryApiRespond.cs" />
+    <Compile Include="IApiGetRequest.cs" />
+    <Compile Include="IApiRequest.cs" />
+    <Compile Include="IApiRespond.cs" />
     <Compile Include="IdTypePairCollectionData.cs" />
     <Compile Include="IdTypePaire.cs" />
     <Compile Include="NameIdPair.cs" />
@@ -64,6 +64,16 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Ticketmaster.Core.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>README.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

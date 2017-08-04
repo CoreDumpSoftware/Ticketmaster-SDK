@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+      This is Core components for Ticketmaster SDKs.
+    </releaseNotes>
+    <copyright>Copyright ©  2017</copyright>
+    <tags>Ticketmaster</tags>
+  </metadata>
+</package>

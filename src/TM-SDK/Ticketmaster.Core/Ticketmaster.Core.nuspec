@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>fc6a6ee2-2003-416a-83a2-33d8d89143b4</id>
-    <version>1.0.0.0</version>
+    <id>$id$</id>
+    <version>$version$</version>
     <title>Ticketmaster.Core</title>
     <authors>Serhii Voznyi</authors>
     <owners>Serhii Voznyi</owners>
     <licenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</licenseUrl>
     <projectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</projectUrl>
-    <iconUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/Ticketmaster.jpg</iconUrl>
+    <iconUrl>https://lh3.googleusercontent.com/h1SaYRgrz0XqDH7xKldRFntvu6Z4ql8HvkCxFnjmB6nUCL9nlwOWmfRc8e5gn8nADaz5mzKqKDV-qQ=w1920-h1080-rw-no</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
       The Ticketmaster.Core solution contains components such ass common client interfaces:

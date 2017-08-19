@@ -189,3 +189,4 @@ _Pvt_Extensions/
 ModelManifest.xml
 /src/TM-SDK/packages
 src/TM-SDK/TM.Discovery.1.0.0.0.nupkg
+src/TM-SDK/Ticketmaster.Discovery/README.cs

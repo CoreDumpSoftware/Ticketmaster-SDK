@@ -1,15 +1,15 @@
 ﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Net;
-    using System.Threading.Tasks;
     using Discovery.V2;
     using Discovery.V2.Models;
     using NSubstitute;
     using Ploeh.AutoFixture;
     using RestSharp;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Threading.Tasks;
     using Xunit;
 
     public class SearchEventsMethodTests : MethodTest
@@ -82,7 +82,6 @@
         {
             var request = new SearchEventsRequest();
             request.AddQueryParameter(new KeyValuePair<SearchEventsQueryParameters, string>(key, value));
-
             await _sut.SearchEventsAsync(request);
 
             await Client

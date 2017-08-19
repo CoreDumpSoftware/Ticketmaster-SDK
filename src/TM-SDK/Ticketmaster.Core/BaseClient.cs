@@ -1,10 +1,10 @@
 ﻿namespace Ticketmaster.Core
 {
+    using RestSharp;
     using System.IO;
     using System.Net;
     using System.Text;
     using System.Threading.Tasks;
-    using RestSharp;
 
     /// <summary>
     ///     The BaseClient class.
@@ -36,7 +36,10 @@
             var exceptionBuilder = new StringBuilder();
             exceptionBuilder.AppendLine("Invalid respond from the server.");
             exceptionBuilder.AppendLine("Current Status Code:" + response.StatusCode);
-            exceptionBuilder.AppendLine("Error Message:" + response.ErrorMessage);
+            if (!string.IsNullOrEmpty(response.ErrorMessage))
+                exceptionBuilder.AppendLine("Error Message:" + response.ErrorMessage);
+            if (!string.IsNullOrEmpty(response.Content))
+                exceptionBuilder.AppendLine("Content:" + response.Content);
             throw new InvalidDataException(exceptionBuilder.ToString());
         }
 
@@ -55,7 +58,7 @@
         }
 
         /// <summary>
-        ///     Executes the request asynchronous.
+        /// Executes the request asynchronous.
         /// </summary>
         /// <typeparam name="T">Type of expected response.</typeparam>
         /// <param name="request">The request.</param>

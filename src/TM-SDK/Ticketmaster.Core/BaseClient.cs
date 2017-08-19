@@ -34,7 +34,7 @@
             if (response.StatusCode == expectedCode) return;
 
             var exceptionBuilder = new StringBuilder();
-            exceptionBuilder.AppendLine("Invalid respond from the server.");
+            exceptionBuilder.AppendLine("Invalid response from the server.");
             exceptionBuilder.AppendLine("Current Status Code:" + response.StatusCode);
             if (!string.IsNullOrEmpty(response.ErrorMessage))
                 exceptionBuilder.AppendLine("Error Message:" + response.ErrorMessage);
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// Executes the request asynchronous.
+        /// Executes the request asynchronously.
         /// </summary>
         /// <typeparam name="T">Type of expected response.</typeparam>
         /// <param name="request">The request.</param>
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        ///     Executes the request asynchronous.
+        /// Executes the request asynchronously.
         /// </summary>
         /// <param name="request">The request.</param>
         /// <param name="query">The <see cref="BaseQuery" /> query.</param>

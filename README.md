@@ -1,23 +1,20 @@
 # Ticketmaster API: SDK for .NET
+
 <p>
+The Ticketmaster .NET SDK contains projects with the implementation of easy access to API endpoints. 
 For more detailed information about the API and to get your API key head <a href="http://developer.ticketmaster.com/">here</a>. 
 This SDK supports Discovery <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/">v2</a>.
 </p>
 
-<h2>Overview</h2>
-The <a href="http://restsharp.org/">RestSharp</a> (<a href="https://github.com/restsharp/RestSharp">repo</a>) was added like a dependency to the project. It helps execute requests to the api endpoints.   
-This project contains useful interfaces and implementation for them to makes calls to api endpoint more simple and friendly for .net developers. 
-The SDK splits all requests for Discovery API between specific interfaces by logical ownership.
+## Overview
+The solution contains different projects
+- <a target="_blank" href="https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Core">Ticketmaster.Core</a>
+- <a target="_blank" href="https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Discovery">Ticketmaster.Discovery</a>
+- <a target="_blank" href="https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Commerce">Ticketmaster.Commerce</a>
 
-* IEventsClient
-* IVenuesClient
-* IClassificationsClient
-* IAttractionsClient
+## Usage
 
-This interfaces contains methods which able to return response from Api in appropriate format, like a <code>IRestResponse</code>  or like an <code>IDiscoveryApiRespond</code>. Also it contains a model classes for responses. 
-
-<h2>Usage</h2>
-<h3>Setup IClientConfig</h3>
+### Setup IClientConfig
 The implementation of interfaces, the clients, in sdk required to resolve <code>ClientConfig</code> and pass them like a parameter into constructor. It have <code>ConsumerKey</code> property what is the Consumer Key for ticketmaster api. And <code>ApiRootUrl</code> what should be <code>https://app.ticketmaster.com/discovery/</code>.
 
 ```C#
@@ -49,8 +46,20 @@ For adding this parameters you just need create new instance of IDiscoveryApiReq
 
 ```C#
 var request = new SearchAttractionsRequest();
-request.AddQueryParameter(new KeyValuePair<SearchEventsQueryParameters, string>(SearchEventsQueryParameters.attractionId, "K8vZ91713eV"));
+request.AddQueryParameter(new KeyValuePair<QueryParameters, string>(key, value));
 ```
 
-Contact me in skype : serhiivoznyi
+## Authors
+
+* **Serhii Voznyi** - *Initial work* 
+  - [LinkedIn](https://www.linkedin.com/in/serhii-voznyi/)
+  - <a href="mailto:serhiivoznyi@gmail.com?Subject=TicketmasterSDK" target="_top">serhiivoznyi@gmail.com</a>
+  - Skype: serhiivoznyi
+
+See also the list of [contributors](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
  

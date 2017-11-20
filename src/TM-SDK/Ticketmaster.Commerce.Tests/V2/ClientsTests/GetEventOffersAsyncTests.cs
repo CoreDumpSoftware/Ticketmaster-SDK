@@ -50,5 +50,14 @@
             var response = await _sut.CallGetEventOffersAsync(request);
             Assert.Equal(_expectedResponse.ToString(), response.Content);
         }
+
+        [Fact]
+        public async Task GetEventOffersAsync_ShouldReturntRealResult()
+        {
+            var client = new RestClient(Config.ApiRootUrl);
+            var sut = new EventOffersClient(client, Config);
+            var result = await sut.GetEventOffersAsync(new GetRequest("vvG17ZfcSx1kbK"));
+            Assert.NotNull(result);
+        }
     }
 }

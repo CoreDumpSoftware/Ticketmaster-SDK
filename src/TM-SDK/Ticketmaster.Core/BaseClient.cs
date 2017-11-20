@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        ///     Executes the request asynchronously.
+        /// Executes the request asynchronously.
         /// </summary>
         /// <param name="request">The request.</param>
         /// <param name="query">The <see cref="BaseQuery" /> query class.</param>

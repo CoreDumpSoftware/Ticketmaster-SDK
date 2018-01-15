@@ -1,15 +1,15 @@
 ﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
-    using Discovery.V2;
-    using Discovery.V2.Models;
-    using NSubstitute;
-    using Ploeh.AutoFixture;
-    using RestSharp;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Net;
     using System.Threading.Tasks;
+    using AutoFixture;
+    using Discovery.V2;
+    using Discovery.V2.Models;
+    using NSubstitute;
+    using RestSharp;
     using Xunit;
 
     public class SearchEventsMethodTests : MethodTest

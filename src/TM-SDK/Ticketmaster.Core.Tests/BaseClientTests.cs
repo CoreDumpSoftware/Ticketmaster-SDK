@@ -1,11 +1,11 @@
 ﻿namespace Ticketmaster.Core.Tests
 {
-    using NSubstitute;
-    using Ploeh.AutoFixture;
-    using RestSharp;
     using System.IO;
     using System.Net;
     using System.Threading.Tasks;
+    using AutoFixture;
+    using NSubstitute;
+    using RestSharp;
     using Xunit;
 
     public class BaseClientImplimintation : BaseClient

@@ -1,8 +1,8 @@
 ﻿namespace Ticketmaster.Commerce.Tests.V2
 {
+    using AutoFixture;
     using Core;
     using NSubstitute;
-    using Ploeh.AutoFixture;
     using RestSharp;
 
     public abstract class MethodTest

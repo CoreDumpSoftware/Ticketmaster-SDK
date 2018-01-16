@@ -1,6 +1,5 @@
 ﻿namespace Ticketmaster.Discovery.Tests.V2.ClientTests
 {
-    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Net;
@@ -81,7 +80,7 @@
             string value)
         {
             var request = new SearchEventsRequest();
-            request.AddQueryParameter(new KeyValuePair<SearchEventsQueryParameters, string>(key, value));
+            request.AddQueryParameter(key, value);
             await _sut.SearchEventsAsync(request);
 
             await Client

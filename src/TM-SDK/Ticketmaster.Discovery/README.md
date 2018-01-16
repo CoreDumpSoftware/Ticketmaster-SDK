@@ -63,16 +63,35 @@ Which inherited from BaseQuery abstract class.
 ```C#
 namespace Ticketmaster.Core
 {
-    public abstract class BaseQuery<T> : IApiRequest
+    public abstract class BaseQuery<TK, T> : IApiRequest
     {
+        /// <summary>
+        /// The parameters dictionary.
+        /// </summary>
         protected Dictionary<string, string> ParametersDictionary;
 
-        protected BaseQuery();
+        protected BaseQuery()
+        {
+            ParametersDictionary = new Dictionary<string, string>();
+        }
 
-        public IEnumerable<KeyValuePair<string, string>> QueryParameters { get; }
+        /// <summary>
+        /// Gets the query parameters.
+        /// </summary>
+        /// <value>
+        /// The query parameters.
+        /// </value>
+        public IEnumerable<KeyValuePair<string, string>> QueryParameters => ParametersDictionary;
 
-        public abstract void AddQueryParameter(KeyValuePair<T, string> parameter);
+        /// <summary>
+        /// Adds the query parameter.
+        /// </summary>
+        /// <param name="parameterName">Name of the parameter.</param>
+        /// <param name="value">The value of the parameter.</param>
+        /// <returns>Instance.</returns>
+        public abstract TK AddQueryParameter(T parameterName, string value);
     }
+}
 }
 ```
 Because of this it's possible to add query parameters to request like described in
@@ -123,13 +142,11 @@ namespace Ticketmaster.Discovery.V2.Models
 }
 ```
 
-**How to use search event?** 
+**How to use search event?**
 
 ```C#
  var request = new SearchEventsRequest();
- request.AddQueryParameter(
-    new KeyValuePair<SearchEventsQueryParameters, string>(
-        key, value));
+ request.AddQueryParameter(SearchEventsQueryParameters.source, "ticketmaster");
  var result = await client.SearchEventsAsync(request);
 
 ```

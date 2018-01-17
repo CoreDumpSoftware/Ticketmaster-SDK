@@ -1,9 +1,7 @@
 language: csharp
-solution: Ticketmaster-SDK.sln
+solution: src/TM-SDK/Ticketmaster-SDK.sln
 dist: trusty
 mono: none
-install:
-- dotnet restore
 script:
 - dotnet build
-- dotnet test Ticketmaster.Discovery.Tests/Ticketmaster.Discovery.Tests.csproj
+- dotnet test src/TM-SDK/Ticketmaster.Discovery.Tests/Ticketmaster.Discovery.Tests.csproj

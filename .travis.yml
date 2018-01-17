@@ -3,5 +3,5 @@ solution: ./src/TM-SDK/Ticketmaster-SDK.sln
 install:
   - nuget restore ./src/TM-SDK/Ticketmaster-SDK.sln
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
-  script:
+script:
   - mono ./packages/xunit.runners.*/tools/xunit.console.clr4.exe ./src/TM-SDK/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll

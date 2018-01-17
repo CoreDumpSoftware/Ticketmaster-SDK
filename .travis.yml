@@ -1,3 +1,9 @@
 language: csharp
 solution: Ticketmaster-SDK.sln
-dotnet: 4.6.1
+dist: trusty
+mono: none
+install:
+- dotnet restore
+script:
+- dotnet build
+- dotnet test Ticketmaster.Discovery.Tests/Ticketmaster.Discovery.Tests.csproj

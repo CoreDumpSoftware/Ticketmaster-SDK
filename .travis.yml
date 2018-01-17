@@ -1,0 +1,3 @@
+language: csharp
+solution: Ticketmaster-SDK.sln
+dotnet: 4.6.1

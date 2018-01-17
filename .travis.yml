@@ -5,4 +5,6 @@ install:
   - nuget install xunit.runner.console -Version 2.3.1 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./src/TM-SDK/Ticketmaster-SDK.sln
+  - mono ./testrunner/xunit.runner.console.2.3.1/tools/net452/xunit.console.x86.exe ./src/TM-SDK/Ticketmaster.Commerce.Tests/bin/Release/Ticketmaster.Commerce.Tests.dll
+  - mono ./testrunner/xunit.runner.console.2.3.1/tools/net452/xunit.console.x86.exe ./src/TM-SDK/Ticketmaster.Core.Tests/bin/Release/Ticketmaster.Core.Tests.dll
   - mono ./testrunner/xunit.runner.console.2.3.1/tools/net452/xunit.console.x86.exe ./src/TM-SDK/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll

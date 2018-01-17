@@ -1,5 +1,9 @@
-# Ticketmaster API: SDK for .NET ![Build Status](https://travis-ci.org/SerhiiVoznyi/ticketmaster-api-sdk-dot-net.svg?branch=master)
+# Ticketmaster API: SDK for .NET 
+
+[![Build Status](https://travis-ci.org/SerhiiVoznyi/ticketmaster-api-sdk-dot-net.svg?branch=master)]() [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/package-update/LICENSE.md)
+
  
+
 <p>
 The Ticketmaster .NET SDK contains projects with the implementation of easy access to API endpoints. 
 For more detailed information about the API and to get your API key head <a href="http://developer.ticketmaster.com/">here</a>. 
@@ -8,9 +12,10 @@ This SDK supports Discovery <a href="http://developer.ticketmaster.com/products-
 
 ## Overview
 The solution contains different projects
-- <a target="_blank" href="https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Core">Ticketmaster.Core</a>
-- <a target="_blank" href="https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Discovery">Ticketmaster.Discovery</a>
-- <a target="_blank" href="https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Commerce">Ticketmaster.Commerce</a>
+
+- [Ticketmaster.Core](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Core)
+- [Ticketmaster.Discovery](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Discovery)
+- [Ticketmaster.Commerce](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Commerce)
 
 ## Usage
 
@@ -58,7 +63,8 @@ request.AddQueryParameter(new KeyValuePair<QueryParameters, string>(key, value))
 
 See also the list of [contributors](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/graphs/contributors) who participated in this project.
 
-## License
+## License 
+
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 

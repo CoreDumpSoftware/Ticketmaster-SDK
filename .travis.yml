@@ -5,4 +5,3 @@ install:
   - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.6.1 ./src/TM-SDK/Ticketmaster-SDK.sln"
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./src/TM-SDK/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll

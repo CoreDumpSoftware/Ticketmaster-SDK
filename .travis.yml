@@ -2,7 +2,7 @@ language: csharp
 solution: ./src/TM-SDK/Ticketmaster-SDK.sln
 install:
   - nuget restore ./src/TM-SDK/Ticketmaster-SDK.sln
-  - nuget install xunit.runnner.console -Version 2.1.0 -OutputDirectory testrunner
+  - nuget install xunit.runnner.console -Version 2.3.1 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./src/TM-SDK/Ticketmaster-SDK.sln
-  - mono ./testrunner/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/TM-SDK/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll
+  - mono ./testrunner/xunit.runner.console.2.3.1/tools/xunit.console.exe ./src/TM-SDK/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll

@@ -60,13 +60,13 @@
     <Compile Include="V2\Models\Relationships.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Ticketmaster.Core\Ticketmaster.Core.csproj">
       <Project>{fc6a6ee2-2003-416a-83a2-33d8d89143b4}</Project>
       <Name>Ticketmaster.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

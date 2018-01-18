@@ -60,10 +60,11 @@
     <Compile Include="IClientConfig.cs" />
     <Compile Include="IApiGetRequest.cs" />
     <Compile Include="IApiRequest.cs" />
-    <Compile Include="IApiRespond.cs" />
+    <Compile Include="IApiResponse.cs" />
     <Compile Include="IdTypePairCollectionData.cs" />
-    <Compile Include="IdTypePaire.cs" />
-    <Compile Include="NameIdPair.cs" />
+    <Compile Include="IdTypePair.cs" />
+    <Compile Include="MinMaxPair.cs" />
+    <Compile Include="IdNamePair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

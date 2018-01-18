@@ -13,6 +13,14 @@
         }
 
         /// <summary>
+        /// Gets or sets the first link.
+        /// </summary>
+        /// <value>
+        /// The first link.
+        /// </value>
+        public Link First { get; set; }
+
+        /// <summary>
         ///     Gets or sets the self link string.
         /// </summary>
         /// <value>
@@ -27,6 +35,14 @@
         ///     The next link.
         /// </value>
         public Link Next { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last link.
+        /// </summary>
+        /// <value>
+        /// The last link.
+        /// </value>
+        public Link Last { get; set; }
 
         /// <summary>
         ///     Gets or sets the venues.

@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Core;
 
-    public class Attraction : BaseEvent, IApiRespond
+    public class Attraction : BaseEvent, IApiResponse
     {
         public Attraction()
         {

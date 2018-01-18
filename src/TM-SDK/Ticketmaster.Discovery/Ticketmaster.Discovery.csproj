@@ -69,6 +69,9 @@
     <Compile Include="V2\IClassificationsClient.cs" />
     <Compile Include="V2\IEventsClient.cs" />
     <Compile Include="V2\Models\Market.cs" />
+    <Compile Include="V2\Models\PriceRange.cs" />
+    <Compile Include="V2\Models\Product.cs" />
+    <Compile Include="V2\Models\Promoter.cs" />
     <Compile Include="V2\Models\QueryParameters.cs" />
     <Compile Include="V2\Models\SearchAttractionsRequest.cs" />
     <Compile Include="V2\Models\SearchAttractionsResponse.cs" />
@@ -86,6 +89,7 @@
     <Compile Include="V2\Models\SearchVenuesQueryParameters.cs" />
     <Compile Include="V2\Models\SearchVenuesRequest.cs" />
     <Compile Include="V2\Models\SearchVenuesResponse.cs" />
+    <Compile Include="V2\Models\Seatmap.cs" />
     <Compile Include="V2\Models\Segment.cs" />
     <Compile Include="V2\Models\Start.cs" />
     <Compile Include="V2\Models\State.cs" />

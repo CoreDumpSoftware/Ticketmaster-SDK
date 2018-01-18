@@ -15,7 +15,7 @@
       * IClientConfig - interface for client configuration;
       * IApiRequest - interface for api requests classes;
       * IApiGetRequest - interface inherited from IApiRequest created for api GET requests classes;
-      * IApiRespond - interface for Api responses;
+      * IApiResponse - interface for Api responses;
 
       Base Implementation for Api Clients BaseClient, and for queering  BaseQuery, GetRequest.
 

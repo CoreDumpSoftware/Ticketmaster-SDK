@@ -4,7 +4,7 @@
 
     public class EventMapping : IdTypePair
     {
-        public NameIdPair Source { get; set; }
+        public IdNamePair Source { get; set; }
 
     }
 }

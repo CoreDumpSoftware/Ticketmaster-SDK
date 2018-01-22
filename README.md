@@ -51,7 +51,7 @@ For adding this parameters you just need create new instance of IDiscoveryApiReq
 
 ```C#
 var request = new SearchAttractionsRequest();
-request.AddQueryParameter(new KeyValuePair<QueryParameters, string>(key, value));
+request.AddQueryParameter(QueryParameters paremeter, string value);
 ```
 
 ## Authors

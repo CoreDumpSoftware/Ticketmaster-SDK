@@ -1,7 +1,5 @@
 ﻿# Ticketmaster.Discovery
 
-## [![NuGet Version](https://img.shields.io/badge/NuGet-1.0.0.2-green.svg?style=flat)](https://www.nuget.org/packages/Ticketmaster.Discovery/)
-
 
 This project contains clients for Second version **V2** of **Ticketmaster 
 [Discovery](http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/) 

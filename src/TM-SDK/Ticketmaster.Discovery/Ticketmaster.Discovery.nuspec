@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>1.0.1</version>
     <title>Ticketmaster.Discovery</title>
     <authors>Serhii Voznyi</authors>
     <owners>Serhii Voznyi</owners>
@@ -10,6 +10,9 @@
     <projectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</projectUrl>
     <iconUrl>https://lh3.googleusercontent.com/h1SaYRgrz0XqDH7xKldRFntvu6Z4ql8HvkCxFnjmB6nUCL9nlwOWmfRc8e5gn8nADaz5mzKqKDV-qQ=w1920-h1080-rw-no</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <language>
+      C#
+    </language>
     <description>
       This project contains useful interfaces and implementation for them to makes calls to api endpoint more simple and friendly for .net developers. 
       The SDK splits all requests for Discovery API between specific interfaces by logical ownership.
@@ -20,6 +23,9 @@
       This interfaces contains methods which able to return response from Api in appropriate format, 
       like a IRestResponse or like an IDiscoveryApiRespond. Also it contains a model classes for responses.
     </description>
+    <summary>
+      Ticketmaster.Discovery.V2 SDK Release.
+    </summary>
     <releaseNotes>This is first release of Ticketmaster.Discovery SDK.</releaseNotes>
     <copyright>Copyright Serhii Voznyi - 2017</copyright>
     <tags>Ticketmaster Discovery SDK</tags>

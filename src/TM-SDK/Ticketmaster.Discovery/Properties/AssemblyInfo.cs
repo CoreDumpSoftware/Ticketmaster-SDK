@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ticketmaster-SDK: Discovery API")]
+[assembly: AssemblyTitle("Ticketmaster.Discovery")]
 [assembly: AssemblyDescription("This SDK supports Discovery API v2.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("QQ.Development.Team")]
-[assembly: AssemblyProduct("Ticketmaster-SDK: Discovery API")]
-[assembly: AssemblyCopyright("Copyright © Serhii Voznyi 2017")]
+[assembly: AssemblyProduct("Ticketmaster.Discovery.SDK")]
+[assembly: AssemblyCopyright("Copyright © Serhii Voznyi 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -63,6 +63,8 @@ request.AddQueryParameter(QueryParameters paremeter, string value);
 
 See also the list of [contributors](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/graphs/contributors) who participated in this project.
 
+To joint our team please follow this [rules](CONTRIBUTING.md).
+
 ## License 
 
 

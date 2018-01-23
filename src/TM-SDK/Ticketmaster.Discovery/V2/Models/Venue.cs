@@ -6,7 +6,7 @@
     /// <summary>
     ///     The Venues class for current event.
     /// </summary>
-    public class Venue : BaseEvent, IApiRespond
+    public class Venue : BaseEvent, IApiResponse
     {
         public Venue()
         {

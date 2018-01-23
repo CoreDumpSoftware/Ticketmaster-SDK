@@ -1,10 +1,10 @@
 ﻿namespace Ticketmaster.Core
 {
-    using RestSharp;
     using System.IO;
     using System.Net;
     using System.Text;
     using System.Threading.Tasks;
+    using RestSharp;
 
     /// <summary>
     /// The BaseClient class.
@@ -69,7 +69,7 @@
             IRestRequest request,
             HttpStatusCode expectedStatusCode,
             IApiRequest query = null)
-            where T : IApiRespond
+            where T : IApiResponse
         {
             AddQuiriesToRequest(ref request, query);
             var response = await _client.ExecuteTaskAsync<T>(request);

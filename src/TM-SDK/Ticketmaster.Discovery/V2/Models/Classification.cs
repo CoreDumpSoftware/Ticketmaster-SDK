@@ -2,7 +2,7 @@
 {
     using Core;
 
-    public class Classification : IApiRespond
+    public class Classification : IApiResponse
     {
         public bool Primary { get; set; }
         public Segment Segment { get; set; }

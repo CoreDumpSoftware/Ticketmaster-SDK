@@ -1,13 +1,13 @@
 ﻿namespace Ticketmaster.Discovery.V2.Models
 {
-    using System.Collections.Generic;
     using Core;
 
-    public class SearchVenuesRequest : BaseQuery<SearchVenuesQueryParameters>
+    public class SearchVenuesRequest : BaseQuery<SearchVenuesRequest, SearchVenuesQueryParameters>
     {
-        public override void AddQueryParameter(KeyValuePair<SearchVenuesQueryParameters, string> parameter)
+        public override SearchVenuesRequest AddQueryParameter(SearchVenuesQueryParameters parameter, string value)
         {
-            ParametersDictionary.Add(parameter.Key.ToString(), parameter.Value);
+            ParametersDictionary.Add(parameter.ToString(), value);
+            return this;
         }
     }
 }

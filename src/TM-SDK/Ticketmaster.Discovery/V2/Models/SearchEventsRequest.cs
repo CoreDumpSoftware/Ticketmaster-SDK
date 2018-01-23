@@ -1,13 +1,13 @@
 ﻿namespace Ticketmaster.Discovery.V2.Models
 {
-    using System.Collections.Generic;
     using Core;
 
-    public class SearchEventsRequest : BaseQuery<SearchEventsQueryParameters>
+    public class SearchEventsRequest : BaseQuery<SearchEventsRequest, SearchEventsQueryParameters>
     {
-        public override void AddQueryParameter(KeyValuePair<SearchEventsQueryParameters, string> parameter)
+        public override SearchEventsRequest AddQueryParameter(SearchEventsQueryParameters parameter, string value)
         {
-            ParametersDictionary.Add(parameter.Key.ToString(), parameter.Value);
+            ParametersDictionary.Add(parameter.ToString(), value);
+            return this;
         }
     }
 }

@@ -2,10 +2,10 @@
 {
     using System.Net;
     using System.Threading.Tasks;
+    using AutoFixture;
     using Discovery.V2;
     using Discovery.V2.Models;
     using NSubstitute;
-    using Ploeh.AutoFixture;
     using RestSharp;
     using Xunit;
 

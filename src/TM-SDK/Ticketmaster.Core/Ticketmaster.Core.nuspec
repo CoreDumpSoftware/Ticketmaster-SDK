@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>1.0.1</version>
     <title>Ticketmaster.Core</title>
     <authors>Serhii Voznyi</authors>
     <owners>Serhii Voznyi</owners>
@@ -10,12 +10,13 @@
     <projectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</projectUrl>
     <iconUrl>https://lh3.googleusercontent.com/h1SaYRgrz0XqDH7xKldRFntvu6Z4ql8HvkCxFnjmB6nUCL9nlwOWmfRc8e5gn8nADaz5mzKqKDV-qQ=w1920-h1080-rw-no</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<language>C#</language>
     <description>
       The Ticketmaster.Core solution contains components such ass common client interfaces:
       * IClientConfig - interface for client configuration;
       * IApiRequest - interface for api requests classes;
       * IApiGetRequest - interface inherited from IApiRequest created for api GET requests classes;
-      * IApiRespond - interface for Api responses;
+      * IApiResponse - interface for Api responses;
 
       Base Implementation for Api Clients BaseClient, and for queering  BaseQuery, GetRequest.
 
@@ -25,10 +26,15 @@
       * IdTypePairCollectionData
       * CurrencyValuePair
     </description>
+	<summary>
+		This is Core components for Ticketmaster SDKs.	
+	</summary>
     <releaseNotes>
-      This is Core components for Ticketmaster SDKs.
+       Updates:
+			- Models re-factored.
+			- Project structure updated.
     </releaseNotes>
-    <copyright>Copyright ©  2017</copyright>
+    <copyright>Copyright Serhii Voznyi © 2018</copyright>
     <tags>Ticketmaster</tags>
   </metadata>
 </package>

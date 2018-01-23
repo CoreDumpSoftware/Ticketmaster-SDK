@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Core;
 
-    public class SearchVenuesResponse : IApiRespond
+    public class SearchVenuesResponse : IApiResponse
     {
         public Embedded _embedded { get; set; }
 

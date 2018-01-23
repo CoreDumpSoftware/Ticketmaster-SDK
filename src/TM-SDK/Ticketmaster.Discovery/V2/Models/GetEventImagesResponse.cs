@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Core;
 
-    public class GetEventImagesResponse : IApiRespond
+    public class GetEventImagesResponse : IApiResponse
     {
         public string Type { get; set; }
         public string Id { get; set; }

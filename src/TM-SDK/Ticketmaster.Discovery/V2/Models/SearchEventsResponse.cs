@@ -6,7 +6,7 @@
     /// <summary>
     ///     The Get Events Response class.
     /// </summary>
-    public class SearchEventsResponse : IApiRespond
+    public class SearchEventsResponse : IApiResponse
     {
         /// <summary>
         ///     Gets or sets the _embedded.
@@ -39,10 +39,10 @@
         {
             public Embedded()
             {
-                events = new List<Event>();
+                Events = new List<Event>();
             }
 
-            public List<Event> events { get; set; }
+            public List<Event> Events { get; set; }
         }
     }
 }

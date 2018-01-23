@@ -1,8 +1,6 @@
 ﻿namespace Ticketmaster.Core
 {
-    using System.Collections.Generic;
-
-    public class GetRequest : BaseQuery<string>, IApiGetRequest
+    public class GetRequest : BaseQuery<GetRequest, string>, IApiGetRequest
     {
         public GetRequest(string id)
         {
@@ -11,9 +9,10 @@
 
         public string Id { get; set; }
 
-        public override void AddQueryParameter(KeyValuePair<string, string> parameter)
+        public override GetRequest AddQueryParameter(string parameterName, string value)
         {
-            ParametersDictionary.Add(parameter.Key, parameter.Value);
+            ParametersDictionary.Add(parameterName, value);
+            return this;
         }
     }
 }

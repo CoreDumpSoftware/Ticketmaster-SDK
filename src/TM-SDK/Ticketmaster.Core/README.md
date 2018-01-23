@@ -7,7 +7,7 @@ The Ticketmaster.Core solution contains components such ass common client interf
 * __IClientConfig__ - interface for client configuration;
 * __IApiRequest__ - interface for api requests classes;
 * __IApiGetRequest__ - interface inherited from IApiRequest created for api GET requests classes;
-* __IApiRespond__ - interface for Api responses;
+* __IApiResponse__ - interface for Api responses;
 
 Base Implementation for Api Clients __BaseClient__, and for queering  __BaseQuery__, __GetRequest__.
 
@@ -40,7 +40,7 @@ protected virtual async Task<T> ExecuteRequestAsync<T>(
     IRestRequest request,
     HttpStatusCode expectedStatusCode,
     IApiRequest query = null)
-    where T : IApiRespond
+    where T : IApiResponse
     {
         AddQuiriesToRequest(ref request, query);
         var response = await _client.ExecuteTaskAsync<T>(request);

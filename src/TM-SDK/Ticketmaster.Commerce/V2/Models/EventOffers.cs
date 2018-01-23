@@ -1,13 +1,13 @@
 ﻿namespace Ticketmaster.Commerce.V2.Models
 {
-    using Core;
     using System.Collections.Generic;
+    using Core;
 
     /// <summary>
     /// The Event Offers Api Respond class.
     /// </summary>
-    /// <seealso cref="Ticketmaster.Core.IApiRespond" />
-    public class EventOffers : IApiRespond
+    /// <seealso cref="Ticketmaster.Core.IApiResponse" />
+    public class EventOffers : IApiResponse
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EventOffers"/> class.

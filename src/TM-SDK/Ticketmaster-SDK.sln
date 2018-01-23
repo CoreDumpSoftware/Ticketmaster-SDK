@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core", "Ticketmaster.Core\Ticketmaster.Core.csproj", "{FC6A6EE2-2003-416A-83A2-33D8D89143B4}"
 EndProject
@@ -11,9 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce", "Ti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery.Tests", "Ticketmaster.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core.Tests", "Ticketmaster.Core.Tests\Ticketmaster.Core.Tests.csproj", "{4F4A31C7-3196-4858-B437-F0E34825CF98}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce.Tests", "Ticketmaster.Commerce.Tests\Ticketmaster.Commerce.Tests.csproj", "{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core.Tests", "Ticketmaster.Core.Tests\Ticketmaster.Core.Tests.csproj", "{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.IntegrationTests", "Ticketmaster.IntegrationTests\Ticketmaster.IntegrationTests.csproj", "{2A6C65CC-7D24-4903-BD32-B85FAC056035}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,19 +39,24 @@ Global
 		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F4A31C7-3196-4858-B437-F0E34825CF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F4A31C7-3196-4858-B437-F0E34825CF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F4A31C7-3196-4858-B437-F0E34825CF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F4A31C7-3196-4858-B437-F0E34825CF98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+		SolutionGuid = {303C48BE-2EDB-46A0-BCA7-7F99A8E0A64E}
 	EndGlobalSection
 EndGlobal

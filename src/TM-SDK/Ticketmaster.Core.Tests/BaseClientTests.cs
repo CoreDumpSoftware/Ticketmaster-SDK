@@ -1,11 +1,11 @@
 ﻿namespace Ticketmaster.Core.Tests
 {
-    using NSubstitute;
-    using Ploeh.AutoFixture;
-    using RestSharp;
     using System.IO;
     using System.Net;
     using System.Threading.Tasks;
+    using AutoFixture;
+    using NSubstitute;
+    using RestSharp;
     using Xunit;
 
     public class BaseClientImplimintation : BaseClient
@@ -16,9 +16,9 @@
 
         }
 
-        public Task<IApiRespond> Execute(IRestRequest request, HttpStatusCode code)
+        public Task<IApiResponse> Execute(IRestRequest request, HttpStatusCode code)
         {
-            return ExecuteRequestAsync<IApiRespond>(request, code);
+            return ExecuteRequestAsync<IApiResponse>(request, code);
         }
     }
 
@@ -44,8 +44,8 @@
         public async Task ExecuteRequestAsync_ShouldValidateResponse()
         {
             _client
-                .ExecuteTaskAsync<IApiRespond>(Arg.Any<IRestRequest>())
-                .Returns(new RestResponse<IApiRespond>
+                .ExecuteTaskAsync<IApiResponse>(Arg.Any<IRestRequest>())
+                .Returns(new RestResponse<IApiResponse>
                 {
                     StatusCode = HttpStatusCode.Unauthorized,
                     Content = "{ \"fault\": { \"faultstring\": \"Invalid ApiKey\", \"detail\": { \"errorcode\": \"oauth.v2.InvalidApiKey\" } } }"

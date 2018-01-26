@@ -64,6 +64,8 @@ Which inherited from BaseQuery abstract class.
 ```C#
 namespace Ticketmaster.Core
 {
+    using System.Collections.Generic;
+
     public abstract class BaseQuery<TK, T> : IApiRequest
     {
         /// <summary>
@@ -89,10 +91,9 @@ namespace Ticketmaster.Core
         /// </summary>
         /// <param name="parameterName">Name of the parameter.</param>
         /// <param name="value">The value of the parameter.</param>
-        /// <returns>Instance.</returns>
+        /// <returns>This class instance.</returns>
         public abstract TK AddQueryParameter(T parameterName, string value);
     }
-}
 }
 ```
 Because of this it's possible to add query parameters to request like described in

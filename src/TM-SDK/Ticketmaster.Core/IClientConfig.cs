@@ -19,7 +19,7 @@
         /// </summary>
         /// <value>
         ///     The api root URL
-        ///     <example>https://app.ticketmaster.com/discovery/</example>
+        ///     <example>https://app.ticketmaster.com/discovery/ or https://app.ticketmaster.com/commerce/ </example>
         ///     .
         /// </value>
         string ApiRootUrl { get; }

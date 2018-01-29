@@ -1,4 +1,4 @@
-﻿# Ticketmaster.Commerce SDK
+﻿# Ticketmaster.Commerce
 
 
 This project contains client for Second version **V2** of **Ticketmaster

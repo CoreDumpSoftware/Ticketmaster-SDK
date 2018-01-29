@@ -65,6 +65,9 @@
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="Ticketmaster.Core, Version=1.0.0.21595, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ticketmaster.Core.1.0.1\lib\net461\Ticketmaster.Core.dll</HintPath>
+    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
@@ -88,10 +91,6 @@
     <ProjectReference Include="..\Ticketmaster.Commerce\Ticketmaster.Commerce.csproj">
       <Project>{ffb338b7-8151-4dd6-a6c9-4db623dae605}</Project>
       <Name>Ticketmaster.Commerce</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ticketmaster.Core\Ticketmaster.Core.csproj">
-      <Project>{fc6a6ee2-2003-416a-83a2-33d8d89143b4}</Project>
-      <Name>Ticketmaster.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

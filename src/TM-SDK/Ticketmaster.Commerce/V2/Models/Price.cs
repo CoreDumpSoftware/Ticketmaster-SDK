@@ -2,16 +2,15 @@
 {
     using Core;
 
-    public class Price
+    public class Price : IdTypePair
     {
         public Price()
         {
             Attributes = new CurrencyValuePair();
-            Relationships = new Relationships();
+            Relationships = new RelationshipsClass();
         }
 
-        public string Type { get; set; }
         public CurrencyValuePair Attributes { get; set; }
-        public Relationships Relationships { get; set; }
+        public RelationshipsClass Relationships { get; set; }
     }
 }

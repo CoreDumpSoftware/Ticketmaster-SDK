@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0</version>
+    <title>Ticketmaster.Commerce</title>
+    <authors>Serhii Voznyi</authors>
+    <owners>Serhii Voznyi</owners>
+    <licenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</projectUrl>
+    <iconUrl>https://lh3.googleusercontent.com/h1SaYRgrz0XqDH7xKldRFntvu6Z4ql8HvkCxFnjmB6nUCL9nlwOWmfRc8e5gn8nADaz5mzKqKDV-qQ=w1920-h1080-rw-no</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<language>C#</language>
+    <description>
+		This project contains client for Second version V2 of Ticketmaster Commerce API with base models for response.
+    </description>
+	<summary>
+		This is components for Ticketmaster Commerce SDKs.
+	</summary>
+    <releaseNotes>
+       Updates:
+			- First Release
+    </releaseNotes>
+    <copyright>Copyright Serhii Voznyi © 2018</copyright>
+    <tags>Ticketmaster</tags>
+  </metadata>
+</package>

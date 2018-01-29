@@ -38,7 +38,7 @@
         [Fact]
         public async Task GetEventOffersAsync_ShouldReturnsEventOffers()
         {
-            var request = new GetRequest("vvG1fZflTV9p2Q");
+            var request = new GetRequest("vv17FZfyGknaheGB");
             var response = await _sut.GetEventOffersAsync(request);
             Assert.Equal(_expectedResponse, response);
         }
@@ -46,7 +46,7 @@
         [Fact]
         public async Task GetEventOffersAsync_ShouldReturnsIRestResponse()
         {
-            var request = new GetRequest("vvG1fZflTV9p2Q");
+            var request = new GetRequest("vv17FZfyGknaheGB");
             var response = await _sut.CallGetEventOffersAsync(request);
             Assert.Equal(_expectedResponse.ToString(), response.Content);
         }
@@ -56,7 +56,7 @@
         {
             var client = new RestClient(Config.ApiRootUrl);
             var sut = new EventOffersClient(client, Config);
-            var result = await sut.GetEventOffersAsync(new GetRequest("vvG17ZfcSx1kbK"));
+            var result = await sut.GetEventOffersAsync(new GetRequest("vv17FZfyGknaheGB"));
             Assert.NotNull(result);
         }
     }

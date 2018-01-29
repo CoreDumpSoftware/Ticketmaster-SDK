@@ -50,13 +50,12 @@
         public List<Offer> Offers { get; set; }
 
         /// <summary>
-        /// Gets or sets the embedded dynamic object.
-        /// Why dynamic? Because create the model structure was too difficult.
+        /// Gets or sets the embedded <see cref="EmbeddedDataClass"/> object.
         /// </summary>
         /// <value>
-        /// The embedded dynamic object.
+        /// The embedded <see cref="EmbeddedDataClass"/> object.
         /// </value>
-        public dynamic _embedded { get; set; }
+        public EmbeddedDataClass _embedded { get; set; }
 
         /// <summary>
         /// The Class for MetaData for <see cref="EventOffers"/>
@@ -70,6 +69,17 @@
             /// The <see cref="EventMapping"/> event mapping.
             /// </value>
             public EventMapping EventMapping { get; set; }
+        }
+
+        /// <summary>
+        /// The class for Embedded field.
+        /// </summary>
+        public class EmbeddedDataClass
+        {
+            public DataCollection<Price> PriceZones { get; set; }
+            public DataCollection<EmbeddedData> Areas { get; set; }
+            public DataCollection<AttributesClass> AttributesRefs { get; set; }
+            public DataCollection<EmbeddedData> Passwords { get; set; }
         }
     }
 }

@@ -18,48 +18,44 @@
 
         public Task<SearchAttractionsResponse> SearchAttractionsAsync(SearchAttractionsRequest request)
         {
-            return SearchAttractionsAsync((IApiRequest) request);
+            return SearchAttractionsAsync((IApiRequest)request);
         }
 
         public Task<SearchAttractionsResponse> SearchAttractionsAsync(IApiRequest request)
         {
-            var searchRequest = new RestRequest(AttractionsPath, Method.GET) {RequestFormat = DataFormat.Json};
+            var searchRequest = new RestRequest(AttractionsPath, Method.GET) { RequestFormat = DataFormat.Json };
             return ExecuteRequestAsync<SearchAttractionsResponse>(searchRequest, HttpStatusCode.OK, request);
         }
 
         public Task<IRestResponse> CallSearchAttractionsAsync(SearchAttractionsRequest request)
         {
-            return CallSearchAttractionsAsync((IApiRequest) request);
+            return CallSearchAttractionsAsync((IApiRequest)request);
         }
 
         public Task<IRestResponse> CallSearchAttractionsAsync(IApiRequest request)
         {
-            var searchRequest = new RestRequest(AttractionsPath, Method.GET) {RequestFormat = DataFormat.Json};
+            var searchRequest = new RestRequest(AttractionsPath, Method.GET) { RequestFormat = DataFormat.Json };
             return ExecuteRequestAsync(searchRequest, request);
         }
 
         public Task<Attraction> GetAttractionDetailsAsync(GetRequest request)
         {
-            return GetAttractionDetailsAsync((IApiGetRequest) request);
+            return GetAttractionDetailsAsync((IApiGetRequest)request);
         }
 
         public Task<Attraction> GetAttractionDetailsAsync(IApiGetRequest request)
         {
-            var searchRequest = new RestRequest(AttractionsWithIdPath, Method.GET) {RequestFormat = DataFormat.Json};
-            searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
-            return ExecuteRequestAsync<Attraction>(searchRequest, HttpStatusCode.OK, request);
+            return ExecuteRequestAsync<Attraction>(RequestHelper.CreateGetRequest(request, AttractionsWithIdPath), HttpStatusCode.OK, request);
         }
 
         public Task<IRestResponse> CallGetAttractionDetailsAsync(GetRequest request)
         {
-            return CallGetAttractionDetailsAsync((IApiGetRequest) request);
+            return CallGetAttractionDetailsAsync((IApiGetRequest)request);
         }
 
         public Task<IRestResponse> CallGetAttractionDetailsAsync(IApiGetRequest request)
         {
-            var searchRequest = new RestRequest(AttractionsWithIdPath, Method.GET) {RequestFormat = DataFormat.Json};
-            searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
-            return ExecuteRequestAsync(searchRequest, request);
+            return ExecuteRequestAsync(RequestHelper.CreateGetRequest(request, AttractionsWithIdPath), request);
         }
     }
 }

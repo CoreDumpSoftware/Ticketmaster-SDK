@@ -19,48 +19,44 @@
 
         public Task<SearchVenuesResponse> SearchVenuesAsync(SearchVenuesRequest query)
         {
-            return SearchVenuesAsync((IApiRequest) query);
+            return SearchVenuesAsync((IApiRequest)query);
         }
 
         public Task<SearchVenuesResponse> SearchVenuesAsync(IApiRequest query)
         {
-            var searchRequest = new RestRequest(VenuesPath, Method.GET) {RequestFormat = DataFormat.Json};
+            var searchRequest = new RestRequest(VenuesPath, Method.GET) { RequestFormat = DataFormat.Json };
             return ExecuteRequestAsync<SearchVenuesResponse>(searchRequest, HttpStatusCode.OK, query);
         }
 
         public Task<IRestResponse> CallSearchVenuesAsync(SearchVenuesRequest query)
         {
-            return CallSearchVenuesAsync((IApiRequest) query);
+            return CallSearchVenuesAsync((IApiRequest)query);
         }
 
         public Task<IRestResponse> CallSearchVenuesAsync(IApiRequest query)
         {
-            var searchRequest = new RestRequest(VenuesWithIdPath, Method.GET) {RequestFormat = DataFormat.Json};
+            var searchRequest = new RestRequest(VenuesWithIdPath, Method.GET) { RequestFormat = DataFormat.Json };
             return ExecuteRequestAsync(searchRequest, query);
         }
 
         public Task<Venue> GetVenueDetailsAsync(GetRequest request)
         {
-            return GetVenueDetailsAsync((IApiGetRequest) request);
+            return GetVenueDetailsAsync((IApiGetRequest)request);
         }
 
         public Task<Venue> GetVenueDetailsAsync(IApiGetRequest request)
         {
-            var searchRequest = new RestRequest(VenuesWithIdPath, Method.GET) {RequestFormat = DataFormat.Json};
-            searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
-            return ExecuteRequestAsync<Venue>(searchRequest, HttpStatusCode.OK, request);
+            return ExecuteRequestAsync<Venue>(RequestHelper.CreateGetRequest(request, VenuesWithIdPath), HttpStatusCode.OK, request);
         }
 
         public Task<IRestResponse> CallGetVenueDetailsAsync(GetRequest request)
         {
-            return CallGetVenueDetailsAsync((IApiGetRequest) request);
+            return CallGetVenueDetailsAsync((IApiGetRequest)request);
         }
 
         public Task<IRestResponse> CallGetVenueDetailsAsync(IApiGetRequest request)
         {
-            var searchRequest = new RestRequest(VenuesWithIdPath, Method.GET) {RequestFormat = DataFormat.Json};
-            searchRequest.AddParameter("id", request.Id, ParameterType.UrlSegment);
-            return ExecuteRequestAsync(searchRequest, request);
+            return ExecuteRequestAsync(RequestHelper.CreateGetRequest(request, VenuesWithIdPath), request);
         }
     }
 }

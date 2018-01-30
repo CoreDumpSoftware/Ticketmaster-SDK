@@ -30,8 +30,7 @@ namespace Ticketmaster.Discovery.Tests.V2.ClientTests
                     Data = _response,
                     StatusCode = HttpStatusCode.OK
                 });
-            //_sut = new ClassificationsClient(Client, Config);
-            _sut = new ClassificationsClient(new RestClient(Config.ApiRootUrl), Config);
+            _sut = new ClassificationsClient(Client, Config);
         }
 
         private readonly ClassificationsClient _sut;

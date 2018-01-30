@@ -88,6 +88,7 @@
     <Compile Include="V2\ClientTests\GetClassificationDetailsMethodTests.cs" />
     <Compile Include="V2\ClientTests\GetEventDetailsMethodTests.cs" />
     <Compile Include="V2\ClientTests\GetEventImagesMethodTests.cs" />
+    <Compile Include="V2\ClientTests\ClassificationsDetailsMethodsTests.cs" />
     <Compile Include="V2\ClientTests\GetVenueDetailsMethodTests.cs" />
     <Compile Include="V2\ClientTests\SearchAttractionsMethodTests.cs" />
     <Compile Include="V2\ClientTests\SearchClassificationsMethodTests.cs" />

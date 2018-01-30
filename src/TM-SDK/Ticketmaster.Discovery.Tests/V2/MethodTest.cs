@@ -15,7 +15,7 @@
         {
             Fixture = new Fixture();
             Config = Substitute.For<IClientConfig>();
-            Config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX-1");
+            Config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX");
             Config.ApiRootUrl.Returns("https://app.ticketmaster.com/discovery/");
             Client = Substitute.For<IRestClient>();
         }

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestHelper.cs" />
     <Compile Include="V2\IVenuesClient.cs" />
     <Compile Include="V2\Models\Address.cs" />
     <Compile Include="V2\Models\Attraction.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="V2\IAttractionsClient.cs" />
     <Compile Include="V2\IClassificationsClient.cs" />
     <Compile Include="V2\IEventsClient.cs" />
+    <Compile Include="V2\Models\GetGenreDetailsResponse.cs" />
     <Compile Include="V2\Models\Market.cs" />
     <Compile Include="V2\Models\PriceRange.cs" />
     <Compile Include="V2\Models\Product.cs" />

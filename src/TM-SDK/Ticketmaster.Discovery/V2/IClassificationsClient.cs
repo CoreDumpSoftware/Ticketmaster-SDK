@@ -11,59 +11,94 @@
     public interface IClassificationsClient
     {
         /// <summary>
-        ///     Searches the classifications asynchronous.
+        ///     Searches the classifications asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="SearchClassificationsRequest" /> request.</param>
         /// <returns>The <see cref="SearchClassificationsResponse" />.</returns>
         Task<SearchClassificationsResponse> SearchClassificationsAsync(SearchClassificationsRequest request);
 
         /// <summary>
-        ///     Searches the classifications asynchronous.
+        ///     Searches the classifications asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="IApiRequest" /> request.</param>
         /// <returns>The <see cref="SearchClassificationsResponse" />.</returns>
         Task<SearchClassificationsResponse> SearchClassificationsAsync(IApiRequest request);
 
         /// <summary>
-        ///     Calls the search classifications asynchronous.
+        ///     Calls the search classifications asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="SearchClassificationsRequest" /> request.</param>
         /// <returns>The <see cref="IRestResponse" />.</returns>
         Task<IRestResponse> CallSearchClassificationsAsync(SearchClassificationsRequest request);
 
         /// <summary>
-        ///     Calls the search classifications asynchronous.
+        ///     Calls the search classifications asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="IApiRequest" /> request.</param>
         /// <returns>The <see cref="IRestResponse" />.</returns>
         Task<IRestResponse> CallSearchClassificationsAsync(IApiRequest request);
 
         /// <summary>
-        ///     Gets the classification details asynchronous.
+        ///     Gets the classification details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="GetRequest" /> request.</param>
-        /// <returns>The <see cref="Classification" />.</returns>
+        /// <returns>The <see cref="Classification" /> with response validation.</returns>
         Task<Classification> GetClassificationDetailsAsync(GetRequest request);
 
         /// <summary>
-        ///     Gets the classification details asynchronous.
+        ///     Gets the classification details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="IApiGetRequest" /> request.</param>
-        /// <returns>The <see cref="Classification" />.</returns>
+        /// <returns>The <see cref="Classification" /> with response validation.</returns>
         Task<Classification> GetClassificationDetailsAsync(IApiGetRequest request);
 
         /// <summary>
-        ///     Calls the get classification details asynchronous.
+        ///     Calls the get classification details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="GetRequest" /> request.</param>
         /// <returns>The <see cref="Classification" />.</returns>
         Task<IRestResponse> CallGetClassificationDetailsAsync(GetRequest request);
 
         /// <summary>
-        ///     Calls the get classification details asynchronous.
+        ///     Calls the get classification details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="IApiGetRequest" /> request.</param>
         /// <returns>The <see cref="Classification" />.</returns>
         Task<IRestResponse> CallGetClassificationDetailsAsync(IApiGetRequest request);
+
+        /// <summary>
+        /// Gets the genre details asynchronously.
+        /// </summary>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
+        /// <returns>Task result for <see cref="GetGenreDetailsResponse"/> with response validation.</returns>
+        Task<GetGenreDetailsResponse> GetGenreDetailsAsync(GetRequest request);
+
+        /// <summary>
+        /// Gets the genre details asynchronously.
+        /// </summary>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
+        /// <returns>Task result for <see cref="IRestResponse"/>.</returns>
+        Task<IRestResponse> CallGetGenreDetailsAsync(GetRequest request);
+
+        /// <summary>
+        /// Calls the get segment details method.
+        /// </summary>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
+        /// <returns>Task result for <see cref="IRestResponse"/> without response validation.</returns>
+        Task<IRestResponse> CallGetSegmentDetails(GetRequest request);
+
+        /// <summary>
+        /// Gets the sub-genre details asynchronously.
+        /// </summary>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
+        /// <returns>Task result for <see cref="GetGenreDetailsResponse"/> with response validation.</returns>
+        Task<GetGenreDetailsResponse> GetSubGenreDetailsAsync(GetRequest request);
+
+        /// <summary>
+        /// Calls the get sub-segment details method.
+        /// </summary>
+        /// <param name="request">The <see cref="GetRequest"/> request.</param>
+        /// <returns>Task result for <see cref="IRestResponse"/> without response validation.</returns>
+        Task<IRestResponse> CallGetSubSegmentDetails(GetRequest request);
     }
 }

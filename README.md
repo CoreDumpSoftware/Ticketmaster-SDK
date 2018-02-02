@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/SerhiiVoznyi/ticketmaster-api-sdk-dot-net.svg?branch=master)]() [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/package-update/LICENSE.md)
 
- 
-
 <p>
 The Ticketmaster .NET SDK contains projects with the implementation of easy access to API endpoints. 
 For more detailed information about the API and to get your API key head <a href="http://developer.ticketmaster.com/">here</a>. 
@@ -53,9 +51,7 @@ For adding this parameters you just need create new instance of IDiscoveryApiReq
 var request = new SearchAttractionsRequest();
 request.AddQueryParameter(QueryParameters paremeter, string value);
 ```
-
 ## Authors
-
 * **Serhii Voznyi** - *Initial work* 
   - [LinkedIn](https://www.linkedin.com/in/serhii-voznyi/)
   - <a href="mailto:serhiivoznyi@gmail.com?Subject=TicketmasterSDK" target="_top">serhiivoznyi@gmail.com</a>
@@ -63,11 +59,9 @@ request.AddQueryParameter(QueryParameters paremeter, string value);
 
 See also the list of [contributors](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/graphs/contributors) who participated in this project.
 
-To joint our team please follow this [rules](CONTRIBUTING.md).
+## Our Team 
+ * Join Team Space on [Slack](https://ticketmasterdotenet.slack.com). 
+ * Durinf development process, please, follow [Code Of Conduct](CONTRIBUTING.md).
 
 ## License 
-
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
- 

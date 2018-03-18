@@ -1,18 +1,16 @@
 ﻿# Ticketmaster.Discovery
 
-
 This project contains clients for Second version **V2** of **Ticketmaster 
 [Discovery](http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/) 
 API** with base models for response.
 
 ## Installetion
+[![NuGet](https://img.shields.io/badge/NuGet-v1.0.2-blue.svg)](https://www.nuget.org/packages/Ticketmaster.Discovery/)
 
 You can install the last stable version of Ticketmaster.Discovery SDK using nuget.
-
 ```
 PM> Install-Package Ticketmaster.Discovery
 ```
-
 For more details about package please visit [this](https://www.nuget.org/packages/Ticketmaster.Discovery/).
 
 ## Usage

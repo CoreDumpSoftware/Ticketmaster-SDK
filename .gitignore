@@ -192,3 +192,4 @@ src/TM-SDK/TM.Discovery.1.0.0.0.nupkg
 src/TM-SDK/Ticketmaster.Discovery/README.cs
 src/TM-SDK/.vs/Ticketmaster-SDK/v15/sqlite3/storage.ide
 src/TM-SDK/.vs/Ticketmaster-SDK/v15/
+/src/.vs

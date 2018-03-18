@@ -13,9 +13,9 @@ This SDK supports Discovery <a href="http://developer.ticketmaster.com/products-
 ## Overview
 The solution contains different projects
 
-- [Ticketmaster.Core](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Core)
-- [Ticketmaster.Discovery](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Discovery)
-- [Ticketmaster.Commerce](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/TM-SDK/Ticketmaster.Commerce)
+- [Ticketmaster.Core](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/Ticketmaster.Core)
+- [Ticketmaster.Discovery](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/Ticketmaster.Discovery)
+- [Ticketmaster.Commerce](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/tree/master/src/Ticketmaster.Commerce)
 
 ## Usage
 

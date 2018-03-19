@@ -8,6 +8,18 @@ For more detailed information about the API and to get your API key head <a href
 This SDK supports Discovery <a href="http://developer.ticketmaster.com/products-and-docs/apis/discovery/v2/">v2</a>.
 </p>
 
+
+## Important
+
+Hi everyone, please, left a feedback about this project or about components.
+It will help me to improve this library.
+You can do this in any way you like:
+* Send me email.
+* Write to me in Skype.
+* Contact me in Linkedin.
+
+Details you can find in 'Authors' section below.
+
 ## Overview
 The solution contains different projects
 
@@ -33,9 +45,9 @@ The implementation of interfaces, the clients, in sdk required to resolve <code>
   var config = Substitute.For<IClientConfig>();
   config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX-1");
   config.ApiRootUrl.Returns("https://app.ticketmaster.com/discovery/");
-  
+
   var restClient = new RestClient(config.ApiRootUrl);
-  
+
   var eventsApiClient = new EventsClient(client, config);
   var result = await _sut.SearchEventsAsync(new SearchEventsRequest());
 ````
@@ -52,16 +64,16 @@ var request = new SearchAttractionsRequest();
 request.AddQueryParameter(QueryParameters paremeter, string value);
 ```
 ## Authors
-* **Serhii Voznyi** - *Initial work* 
+* **Serhii Voznyi** - *Initial work*
   - [LinkedIn](https://www.linkedin.com/in/serhii-voznyi/)
   - <a href="mailto:serhiivoznyi@gmail.com?Subject=TicketmasterSDK" target="_top">serhiivoznyi@gmail.com</a>
   - Skype: serhiivoznyi
 
 See also the list of [contributors](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/graphs/contributors) who participated in this project.
 
-## Our Team 
- * Join Team Space on [Slack](https://ticketmasterdotenet.slack.com). 
+## Our Team
+ * Join Team Space on [Slack](https://ticketmasterdotenet.slack.com).
  * Durinf development process, please, follow [Code Of Conduct](CONTRIBUTING.md).
 
-## License 
+## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

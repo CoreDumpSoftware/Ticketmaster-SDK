@@ -1,10 +1,11 @@
 language: csharp
 solution: ./src/Ticketmaster-SDK.sln
+dotnet: 2.0.3
 install:
   - nuget restore ./src/Ticketmaster-SDK.sln
-  - nuget install xunit.runner.console -Version 2.3.1 -OutputDirectory testrunner
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./src/Ticketmaster-SDK.sln
-  - mono ./testrunner/xunit.runner.console.2.3.1/tools/netstandard2.0/xunit.console.x86.exe ./src/Ticketmaster.Commerce.Tests/bin/Release/Ticketmaster.Commerce.Tests.dll
-  - mono ./testrunner/xunit.runner.console.2.3.1/tools/netstandard2.0/xunit.console.x86.exe ./src/Ticketmaster.Core.Tests/bin/Release/Ticketmaster.Core.Tests.dll
-  - mono ./testrunner/xunit.runner.console.2.3.1/tools/netstandard2.0/xunit.console.x86.exe ./src/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./src/Ticketmaster.Commerce.Tests/bin/Release/Ticketmaster.Commerce.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./src/Ticketmaster.Core.Tests/bin/Release/Ticketmaster.Core.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./src/Ticketmaster.Discovery.Tests/bin/Release/Ticketmaster.Discovery.Tests.dll

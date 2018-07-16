@@ -14,10 +14,10 @@
      This interfaces contains methods which able to return response from Api in appropriate format, 
      like a IRestResponse or like an IDiscoveryApiRespond. Also it contains a model classes for responses.</Description>
     <Copyright>Serhii Voznyi © 2018</Copyright>
-    <PackageLicenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-sdk/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SerhiiVoznyi/ticketmaster-sdk</PackageProjectUrl>
     <PackageIconUrl>https://lh3.googleusercontent.com/h1SaYRgrz0XqDH7xKldRFntvu6Z4ql8HvkCxFnjmB6nUCL9nlwOWmfRc8e5gn8nADaz5mzKqKDV-qQ=w1920-h1080-rw-no</PackageIconUrl>
-    <RepositoryUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SerhiiVoznyi/ticketmaster-sdk</RepositoryUrl>
     <PackageTags>Ticketmaster Discovery</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>

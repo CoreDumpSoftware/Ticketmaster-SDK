@@ -14,6 +14,8 @@ from Ticketmaster.
 
 ## Installetion
 
+[![NuGet](https://img.shields.io/badge/NuGet-v2.0.0-blue.svg)](https://www.nuget.org/packages/Ticketmaster.Commerce/)
+
 You can install the last stable version of Ticketmaster.Commerce SDK using nuget.
 
 ```

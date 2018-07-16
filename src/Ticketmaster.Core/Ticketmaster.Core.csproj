@@ -1,84 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FC6A6EE2-2003-416A-83A2-33D8D89143B4}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Ticketmaster.Core</RootNamespace>
-    <AssemblyName>Ticketmaster.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>The Ticketmaster.Core solution contains components such ass common client interfaces:
+      * IClientConfig - interface for client configuration;
+      * IApiRequest - interface for api requests classes;
+      * IApiGetRequest - interface inherited from IApiRequest created for api GET requests classes;
+      * IApiResponse - interface for Api responses;
+
+      Base Implementation for Api Clients BaseClient, and for queering  BaseQuery, GetRequest.
+
+      This common models components to serialize response data:
+      * NameIdPair
+      * IdTypePaire
+      * IdTypePairCollectionData
+      * CurrencyValuePair</Description>
+    <PackageId>Ticketmaster.Core</PackageId>
+    <Version>2.0.0</Version>
+    <Authors>Serhii Voznyi</Authors>
+    <Copyright>Copyright Serhii Voznyi © 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</RepositoryUrl>
+    <PackageIconUrl>https://lh3.googleusercontent.com/h1SaYRgrz0XqDH7xKldRFntvu6Z4ql8HvkCxFnjmB6nUCL9nlwOWmfRc8e5gn8nADaz5mzKqKDV-qQ=w1920-h1080-rw-no</PackageIconUrl>
+    <PackageTags>Ticketmaster</PackageTags>
+    <NeutralLanguage>English</NeutralLanguage>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="RestSharp, Version=106.2.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.2.1\lib\net452\RestSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="RestSharp" Version="106.3.1" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="BaseClient.cs" />
-    <Compile Include="BaseQuery.cs" />
-    <Compile Include="CurrencyValuePair.cs" />
-    <Compile Include="GetRequest.cs" />
-    <Compile Include="IClientConfig.cs" />
-    <Compile Include="IApiGetRequest.cs" />
-    <Compile Include="IApiRequest.cs" />
-    <Compile Include="IApiResponse.cs" />
-    <Compile Include="IdTypePairCollectionData.cs" />
-    <Compile Include="IdTypePair.cs" />
-    <Compile Include="MinMaxPair.cs" />
-    <Compile Include="IdNamePair.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Ticketmaster.Core.nuspec" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>README.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

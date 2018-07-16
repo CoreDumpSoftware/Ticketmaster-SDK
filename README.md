@@ -1,6 +1,6 @@
 # Ticketmaster API: SDK for .NET 
 
-[![Build Status](https://travis-ci.org/SerhiiVoznyi/ticketmaster-api-sdk-dot-net.svg?branch=master)]() [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/package-update/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/package-update/LICENSE.md)
 
 <p>
 The Ticketmaster .NET SDK contains projects with the implementation of easy access to API endpoints. 

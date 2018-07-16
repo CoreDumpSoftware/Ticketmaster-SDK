@@ -1,21 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core", "Ticketmaster.Core\Ticketmaster.Core.csproj", "{FC6A6EE2-2003-416A-83A2-33D8D89143B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Core", "Ticketmaster.Core\Ticketmaster.Core.csproj", "{616878AA-E3DA-4272-8E09-6E39CCF4F1CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery", "Ticketmaster.Discovery\Ticketmaster.Discovery.csproj", "{978DC54B-CF8C-4630-8FAF-908273D06332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Commerce", "Ticketmaster.Commerce\Ticketmaster.Commerce.csproj", "{D89FC682-501D-40F4-83BD-AA8104CE2A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce", "Ticketmaster.Commerce\Ticketmaster.Commerce.csproj", "{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce.Tests", "Ticketmaster.Commerce.Tests\Ticketmaster.Commerce.Tests.csproj", "{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery.Tests", "Ticketmaster.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery", "Ticketmaster.Discovery\Ticketmaster.Discovery.csproj", "{A04DEFB5-F979-4DA6-939C-4FA208514C79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce.Tests", "Ticketmaster.Commerce.Tests\Ticketmaster.Commerce.Tests.csproj", "{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery.Tests", "Ticketmaster.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core.Tests", "Ticketmaster.Core.Tests\Ticketmaster.Core.Tests.csproj", "{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.IntegrationTests", "Ticketmaster.IntegrationTests\Ticketmaster.IntegrationTests.csproj", "{2A6C65CC-7D24-4903-BD32-B85FAC056035}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core.Tests", "Ticketmaster.Core.Tests\Ticketmaster.Core.Tests.csproj", "{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,40 +21,35 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC6A6EE2-2003-416A-83A2-33D8D89143B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC6A6EE2-2003-416A-83A2-33D8D89143B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC6A6EE2-2003-416A-83A2-33D8D89143B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC6A6EE2-2003-416A-83A2-33D8D89143B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{978DC54B-CF8C-4630-8FAF-908273D06332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{978DC54B-CF8C-4630-8FAF-908273D06332}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{978DC54B-CF8C-4630-8FAF-908273D06332}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{978DC54B-CF8C-4630-8FAF-908273D06332}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFB338B7-8151-4DD6-A6C9-4DB623DAE605}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D7FC507-BE35-4BEF-89BE-CAA33AE9D37C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0A1D6D3-5B34-4285-BF4D-66EE99C23FF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA81A57A-2DA2-483E-A776-F51B2F8E6A9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A6C65CC-7D24-4903-BD32-B85FAC056035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{616878AA-E3DA-4272-8E09-6E39CCF4F1CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616878AA-E3DA-4272-8E09-6E39CCF4F1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616878AA-E3DA-4272-8E09-6E39CCF4F1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616878AA-E3DA-4272-8E09-6E39CCF4F1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89FC682-501D-40F4-83BD-AA8104CE2A8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89FC682-501D-40F4-83BD-AA8104CE2A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89FC682-501D-40F4-83BD-AA8104CE2A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89FC682-501D-40F4-83BD-AA8104CE2A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04DEFB5-F979-4DA6-939C-4FA208514C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04DEFB5-F979-4DA6-939C-4FA208514C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04DEFB5-F979-4DA6-939C-4FA208514C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04DEFB5-F979-4DA6-939C-4FA208514C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
-		SolutionGuid = {303C48BE-2EDB-46A0-BCA7-7F99A8E0A64E}
+		SolutionGuid = {BE1F22EC-069A-4ADC-9607-1668EBBE435A}
 	EndGlobalSection
 EndGlobal

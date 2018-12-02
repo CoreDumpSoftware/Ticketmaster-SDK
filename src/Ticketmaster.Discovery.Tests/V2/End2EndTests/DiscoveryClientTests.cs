@@ -5,52 +5,44 @@ namespace Ticketmaster.Discovery.Tests.V2
     using Discovery.V2;
     using Discovery.V2.Models;
     using NSubstitute;
-    using RestSharp;
     using System.Threading.Tasks;
     using Xunit;
 
     public class DiscoveryClientTests
     {
         private readonly DiscoveryApi _sut;
-        private readonly IEventsClient _events;
-        private readonly IVenuesClient _venues;
-        private readonly IAttractionsClient _attractions;
-        private readonly IClassificationsClient _classifications;
-        private readonly IClientConfig _config;
-        private readonly IClientFactory _factory;
 
         public DiscoveryClientTests()
         {
-            _config = Substitute.For<IClientConfig>();
-            _config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX");
-            _config.ApiRootUrl.Returns("https://app.ticketmaster.com/discovery/");
-            _events = new EventsClient(new RestClient(_config.ApiRootUrl), _config);
-            _sut = new DiscoveryApi(_events, _venues, _attractions, _classifications);
-            _factory = new ClientFactory();
+            var config = Substitute.For<IClientConfig>();
+            config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX");
+            config.ApiRootUrl.Returns("https://app.ticketmaster.com/discovery/");
+            IClientFactory factory = new ClientFactory();
+            _sut = factory.Create<DiscoveryApi>(config);
         }
 
         [Fact]
-        public async Task SearchEventsAsync_()
+        public void ClientFactory_ShouldCreate_DiscoveryApi()
         {
-            var result = await _sut
-                .Events
-                .SearchEventsAsync(
-                    new SearchEventsRequest()
-                        .AddQueryParameter(SearchEventsQueryParameters.city, "Wroclaw"));
-
-            Assert.NotNull(result);
+            Assert.NotNull(_sut);
+            Assert.IsType<DiscoveryApi>(_sut);
+            Assert.NotNull(_sut.Events);
+            Assert.IsType<EventsClient>(_sut.Events);
+            Assert.NotNull(_sut.Attractions);
+            Assert.IsType<AttractionsClient>(_sut.Attractions);
+            Assert.NotNull(_sut.Venues);
+            Assert.IsType<VenuesClient>(_sut.Venues);
+            Assert.NotNull(_sut.Classifications);
+            Assert.IsType<ClassificationsClient>(_sut.Classifications);
         }
 
         [Fact]
-        public async Task Create()
+        public async Task Events_SearchEventsAsync_ShouldReturnResult()
         {
-            var result = await _factory.Create<DiscoveryApi>(_config)
-                .Events
-                .SearchEventsAsync(
-                    new SearchEventsRequest()
-                        .AddQueryParameter(SearchEventsQueryParameters.city, "Wroclaw"));
-
+            var result = await _sut.Events.SearchEventsAsync(new SearchEventsRequest());
             Assert.NotNull(result);
+            Assert.NotNull(result._embedded);
+            Assert.NotEmpty(result._embedded.Events);
         }
     }
 }

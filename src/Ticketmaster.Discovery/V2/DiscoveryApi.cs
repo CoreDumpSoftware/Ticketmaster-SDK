@@ -81,6 +81,9 @@ namespace Ticketmaster.Discovery
 
         /// <summary>
         ///     Gets or sets the Events
+        /// <exception cref="NullReferenceException">
+        /// If <see cref="IEventsClient"/>is null.
+        /// </exception>
         /// </summary>
         public IEventsClient Events
         {
@@ -90,6 +93,9 @@ namespace Ticketmaster.Discovery
 
         /// <summary>
         ///     Gets or sets the Venues
+        /// <exception cref="NullReferenceException">
+        /// If <see cref="IVenuesClient"/>is null.
+        /// </exception>
         /// </summary>
         public IVenuesClient Venues
         {
@@ -99,6 +105,9 @@ namespace Ticketmaster.Discovery
 
         /// <summary>
         ///     Gets or sets the Attractions
+        /// <exception cref="NullReferenceException">
+        /// If <see cref="IAttractionsClient"/>is null.
+        /// </exception>
         /// </summary>
         public IAttractionsClient Attractions
         {
@@ -109,6 +118,9 @@ namespace Ticketmaster.Discovery
 
         /// <summary>
         ///     Gets or sets the Classifications
+        /// <exception cref="NullReferenceException">
+        /// If <see cref="IClassificationsClient"/>is null.
+        /// </exception>
         /// </summary>
         public IClassificationsClient Classifications
         {

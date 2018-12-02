@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Core", "Ticket
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Commerce", "Ticketmaster.Commerce\Ticketmaster.Commerce.csproj", "{D89FC682-501D-40F4-83BD-AA8104CE2A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Commerce.Tests", "Ticketmaster.Commerce.Tests\Ticketmaster.Commerce.Tests.csproj", "{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Commerce.Tests", "Ticketmaster.Commerce.Tests\Ticketmaster.Commerce.Tests.csproj", "{97F5379F-8CCA-43D3-B59F-E4645C9B5AC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery", "Ticketmaster.Discovery\Ticketmaster.Discovery.csproj", "{A04DEFB5-F979-4DA6-939C-4FA208514C79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Discovery", "Ticketmaster.Discovery\Ticketmaster.Discovery.csproj", "{A04DEFB5-F979-4DA6-939C-4FA208514C79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Discovery.Tests", "Ticketmaster.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Discovery.Tests", "Ticketmaster.Discovery.Tests\Ticketmaster.Discovery.Tests.csproj", "{9E96079C-8DA9-42A5-B5F0-265A0004CD4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketmaster.Core.Tests", "Ticketmaster.Core.Tests\Ticketmaster.Core.Tests.csproj", "{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketmaster.Core.Tests", "Ticketmaster.Core.Tests\Ticketmaster.Core.Tests.csproj", "{4F408666-0634-4EDD-B3E6-4D9C9F0FB568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

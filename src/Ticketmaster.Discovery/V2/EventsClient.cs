@@ -1,10 +1,10 @@
 ﻿namespace Ticketmaster.Discovery.V2
 {
-    using System.Net;
-    using System.Threading.Tasks;
     using Core;
     using Models;
     using RestSharp;
+    using System.Net;
+    using System.Threading.Tasks;
 
     public class EventsClient : BaseClient, IEventsClient
     {

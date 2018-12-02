@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ticketmaster.Core" Version="2.0.0" />
+    <ProjectReference Include="..\Ticketmaster.Core\Ticketmaster.Core.csproj" />
   </ItemGroup>
 
 </Project>

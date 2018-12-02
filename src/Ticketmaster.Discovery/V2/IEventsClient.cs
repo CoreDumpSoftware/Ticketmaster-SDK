@@ -1,9 +1,9 @@
 ﻿namespace Ticketmaster.Discovery.V2
 {
-    using System.Threading.Tasks;
     using Core;
     using Models;
     using RestSharp;
+    using System.Threading.Tasks;
 
     /// <summary>
     ///     The IEventsClient interface.

@@ -10,12 +10,12 @@ namespace Ticketmaster.Discovery
     /// <summary>
     ///     Defines the <see cref="DiscoveryApi" />
     /// </summary>
-    public class DiscoveryApi : IDiscoveryClient
+    public class DiscoveryApi : IDiscoveryClient, IDisposable
     {
         /// <summary>
         ///     Defines the ExceptionPattern
         /// </summary>
-        private const string ExceptionPattern = "You try to access {0} client without it initialization";
+        private const string ExceptionPattern = "You try to access '{0}' client without it initialization. You should register clients in you DI container or call 'Configure' method.";
 
         /// <summary>
         ///     Defines the _attractions
@@ -127,6 +127,14 @@ namespace Ticketmaster.Discovery
             get => _classifications ??
                    throw new NullReferenceException(string.Format(ExceptionPattern, nameof(Classifications)));
             protected set => _classifications = value;
+        }
+
+        public void Dispose()
+        {
+            _events = null;
+            _venues = null;
+            _attractions = null;
+            _classifications = null;
         }
     }
 }

@@ -5,20 +5,23 @@ namespace Ticketmaster.Discovery.Tests.V2
     using Discovery.V2;
     using Discovery.V2.Models;
     using NSubstitute;
+    using System;
     using System.Threading.Tasks;
     using Xunit;
 
     public class DiscoveryClientTests
     {
         private readonly DiscoveryApi _sut;
+        private readonly IClientFactory _factory;
+        private readonly IClientConfig _config;
 
         public DiscoveryClientTests()
         {
-            var config = Substitute.For<IClientConfig>();
-            config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX");
-            config.ApiRootUrl.Returns("https://app.ticketmaster.com/discovery/");
-            IClientFactory factory = new ClientFactory();
-            _sut = factory.Create<DiscoveryApi>(config);
+            _config = Substitute.For<IClientConfig>();
+            _config.ConsumerKey.Returns("K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX");
+            _config.ApiRootUrl.Returns("https://app.ticketmaster.com/discovery/");
+            _factory = new ClientFactory();
+            _sut = _factory.Create<DiscoveryApi>(_config);
         }
 
         [Fact]
@@ -39,10 +42,27 @@ namespace Ticketmaster.Discovery.Tests.V2
         [Fact]
         public async Task Events_SearchEventsAsync_ShouldReturnResult()
         {
-            var result = await _sut.Events.SearchEventsAsync(new SearchEventsRequest());
+            SearchEventsResponse result;
+
+            using (var sut = _factory.Create<DiscoveryApi>(_config))
+            {
+                result = await sut.Events.SearchEventsAsync(new SearchEventsRequest());
+            }
+
             Assert.NotNull(result);
             Assert.NotNull(result._embedded);
             Assert.NotEmpty(result._embedded.Events);
+        }
+
+        [Fact]
+        public void DiscoveryApi_Properties_ShouldThrow_NullReferenceException_WhenNot()
+        {
+            var api = new DiscoveryApi();
+
+            Assert.Throws<NullReferenceException>(() => api.Events);
+            Assert.Throws<NullReferenceException>(() => api.Attractions);
+            Assert.Throws<NullReferenceException>(() => api.Classifications);
+            Assert.Throws<NullReferenceException>(() => api.Venues);
         }
     }
 }

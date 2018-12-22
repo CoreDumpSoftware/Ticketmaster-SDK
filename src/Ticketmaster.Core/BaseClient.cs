@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// Executes the request asynchronously.
+        /// Executes the request asynchronouslyly.
         /// </summary>
         /// <typeparam name="T">Type of expected response.</typeparam>
         /// <param name="request">The request.</param>
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// Executes the request asynchronously.
+        /// Executes the request asynchronouslyly.
         /// </summary>
         /// <param name="request">The request.</param>
         /// <param name="query">The <see cref="BaseQuery" /> query class.</param>

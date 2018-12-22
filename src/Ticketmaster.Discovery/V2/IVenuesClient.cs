@@ -40,28 +40,28 @@
 
 
         /// <summary>
-        ///     Gets the venue details asynchronous.
+        ///     Gets the venue details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="GetRequest" /> request.</param>
         /// <returns>The Task <see cref="Venue" />.</returns>
         Task<Venue> GetVenueDetailsAsync(GetRequest request);
 
         /// <summary>
-        ///     Gets the venue details asynchronous.
+        ///     Gets the venue details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="IApiGetRequest" /> request.</param>
         /// <returns>The Task <see cref="Venue" />.</returns>
         Task<Venue> GetVenueDetailsAsync(IApiGetRequest request);
 
         /// <summary>
-        ///     Calls the get venue details asynchronous.
+        ///     Calls the get venue details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="GetRequest" /> request.</param>
         /// <returns>The Task <see cref="IRestResponse" />.</returns>
         Task<IRestResponse> CallGetVenueDetailsAsync(GetRequest request);
 
         /// <summary>
-        ///     Calls the get venue details asynchronous.
+        ///     Calls the get venue details asynchronously.
         /// </summary>
         /// <param name="request">The <see cref="IApiGetRequest" /> request.</param>
         /// <returns>The Task <see cref="IRestResponse" />.</returns>

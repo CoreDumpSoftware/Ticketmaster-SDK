@@ -1,11 +1,11 @@
 ﻿# Ticketmaster.Discovery
 
-This project contains clients for Second version **V2** of **Ticketmaster 
-[Discovery](http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/) 
+This project contains clients for Second version **V2** of **Ticketmaster
+[Discovery](http://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
 API** with base models for response.
 
 ## Installetion
-[![NuGet](https://img.shields.io/badge/NuGet-v2.0.0-blue.svg)](https://www.nuget.org/packages/Ticketmaster.Discovery/)
+[![NuGet](https://img.shields.io/badge/NuGet-v2.0.1-blue.svg)](https://www.nuget.org/packages/Ticketmaster.Discovery/)
 
 You can install the last stable version of Ticketmaster.Discovery SDK using nuget.
 ```
@@ -18,23 +18,60 @@ For more details about package please visit [this](https://www.nuget.org/package
 Usage of any client require **<code>IClientConfig</code>** to be implemented.
 
 ```C#
-    public interface IClientConfig
-    {
-        // Your API Key like : 'K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX' 
-        string ConsumerKey { get; } 
-        
-        // The 'https://app.ticketmaster.com/discovery/' url to ticketmaster discovery api.
-        string ApiRootUrl { get; }   
-    }
+public interface IClientConfig
+{
+	// Your API Key like : 'K1uJLzJ5mdt3oBKNSzjcEEEzxHuJJXiX'
+	string ConsumerKey { get; }
+
+	/*The 'https://app.ticketmaster.com/discovery/'
+	url to ticketmaster discovery api.*/
+	string ApiRootUrl { get; }
+}
 ```
 
-This interface common for implementation for all clients in SDK.  
+This interface common for implementation for all clients in SDK.
+To simplify usage of this <code>IClientConfig</code> I already added implementation inside this package.
+Just use **Config** class.
 
-#### Events Client 
+```C#
+var config = new Config("Your API Key");
+```
+
+
+## Global API Clients
+
+To Access Discovery API endpoints you can use instance of particular client:
+
+* IAttractionsClient -> AttractionsClient;
+* IClassificationsClient -> ClassificationsClient;
+* IEventsClient -> EventsClient;
+* IVenuesClient -> VenuesClient;
+
+Just in case if we need to access some particular endpoint and don't want to create instances of all clients.
+Or we can use **ClientFactory** class to create global API access point **DiscoveryApi** class like this:
+
+```C#
+var config = new Config("Your API Key");
+var factory = new ClientFactory();
+var discovery = factory.Create<DiscoveryApi>(config);
+```
+Or simply create instance of **DiscoveryApi** class and call method *.Configure(config)*.
+```C#
+var config = new Config("Your API Key");
+var discovery = new DiscoveryApi().Configure(config);
+```
+Then we will be able to access all clients in this api.
+To access the endpoints for Events we can use Events Client like this:
+
+```C#
+discovery.Events.SearchEventsAsync(new SearchEventsRequest());
+```
+
+#### Events Client
 
 The **IEventsClient** interface contains methods for Searching events and obtaining information about them.
-It has default implementation in **EventsClient**. The EventClient class has only one public constructor with 
-two parameters 
+It has default implementation in **EventsClient**. The EventClient class has only one public constructor with
+two parameters
 
 ```C#
 public EventsClient(IRestClient client, IClientConfig config)
@@ -42,7 +79,7 @@ public EventsClient(IRestClient client, IClientConfig config)
 
 All direct calls to API goings via IRestClient, that mean we have to set base URL for it from  IClientConfig.
 
-#### Basic creation of EventsClient 
+#### Basic creation of EventsClient
 ```C#
 var client = new EventsClient(new RestClient(config.ApiRootUrl), config);
 ```
@@ -62,36 +99,36 @@ Which inherited from BaseQuery abstract class.
 ```C#
 namespace Ticketmaster.Core
 {
-    using System.Collections.Generic;
+	using System.Collections.Generic;
 
-    public abstract class BaseQuery<TK, T> : IApiRequest
-    {
-        /// <summary>
-        /// The parameters dictionary.
-        /// </summary>
-        protected Dictionary<string, string> ParametersDictionary;
+	public abstract class BaseQuery<TK, T> : IApiRequest
+	{
+		/// <summary>
+		/// The parameters dictionary.
+		/// </summary>
+		protected Dictionary<string, string> ParametersDictionary;
 
-        protected BaseQuery()
-        {
-            ParametersDictionary = new Dictionary<string, string>();
-        }
+		protected BaseQuery()
+		{
+			ParametersDictionary = new Dictionary<string, string>();
+		}
 
-        /// <summary>
-        /// Gets the query parameters.
-        /// </summary>
-        /// <value>
-        /// The query parameters.
-        /// </value>
-        public IEnumerable<KeyValuePair<string, string>> QueryParameters => ParametersDictionary;
+		/// <summary>
+		/// Gets the query parameters.
+		/// </summary>
+		/// <value>
+		/// The query parameters.
+		/// </value>
+		public IEnumerable<KeyValuePair<string, string>> QueryParameters => ParametersDictionary;
 
-        /// <summary>
-        /// Adds the query parameter.
-        /// </summary>
-        /// <param name="parameterName">Name of the parameter.</param>
-        /// <param name="value">The value of the parameter.</param>
-        /// <returns>This class instance.</returns>
-        public abstract TK AddQueryParameter(T parameterName, string value);
-    }
+		/// <summary>
+		/// Adds the query parameter.
+		/// </summary>
+		/// <param name="parameterName">Name of the parameter.</param>
+		/// <param name="value">The value of the parameter.</param>
+		/// <returns>This class instance.</returns>
+		public abstract TK AddQueryParameter(T parameterName, string value);
+	}
 }
 ```
 Because of this it's possible to add query parameters to request like described in
@@ -101,44 +138,44 @@ All **QueryParameters** stored in enum:
 ```C#
 namespace Ticketmaster.Discovery.V2.Models
 {
-    public enum SearchEventsQueryParameters
-    {
-        keyword = 1,
-        attractionId = 2,
-        venueId = 3,
-        postalCode = 4,
-        latlong = 5,
-        radius = 6,
-        unit = 7,
-        source = 8,
-        locale = 9,
-        marketId = 10,
-        startDateTime = 11,
-        endDateTime = 12,
-        includeTBA = 13,
-        includeTBD = 14,
-        includeTest = 15,
-        size = 16,
-        page = 17,
-        sort = 18,
-        onsaleStartDateTime = 19,
-        onsaleEndDateTime = 20,
-        city = 21,
-        countryCode = 22,
-        stateCode = 23,
-        classificationName = 24,
-        classificationId = 25,
-        dmaId = 26,
-        onsaleOnStartDate = 27,
-        onsaleOnAfterStartDate = 28,
-        segmentId = 29,
-        segmentName = 30,
-        promoterId = 31,
-        clientVisibility = 32,
-        nlp = 33,
-        geoPoint = 34,
-        includeLicensedContent = 35
-    }
+	public enum SearchEventsQueryParameters
+	{
+		keyword = 1,
+		attractionId = 2,
+		venueId = 3,
+		postalCode = 4,
+		latlong = 5,
+		radius = 6,
+		unit = 7,
+		source = 8,
+		locale = 9,
+		marketId = 10,
+		startDateTime = 11,
+		endDateTime = 12,
+		includeTBA = 13,
+		includeTBD = 14,
+		includeTest = 15,
+		size = 16,
+		page = 17,
+		sort = 18,
+		onsaleStartDateTime = 19,
+		onsaleEndDateTime = 20,
+		city = 21,
+		countryCode = 22,
+		stateCode = 23,
+		classificationName = 24,
+		classificationId = 25,
+		dmaId = 26,
+		onsaleOnStartDate = 27,
+		onsaleOnAfterStartDate = 28,
+		segmentId = 29,
+		segmentName = 30,
+		promoterId = 31,
+		clientVisibility = 32,
+		nlp = 33,
+		geoPoint = 34,
+		includeLicensedContent = 35
+	}
 }
 ```
 

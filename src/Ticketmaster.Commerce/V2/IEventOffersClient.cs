@@ -11,28 +11,28 @@
     public interface IEventOffersClient
     {
         /// <summary>
-        /// Gets the event offers asynchronous.
+        /// Gets the event offers asynchronously.
         /// </summary>
         /// <param name="getRequest">The <see cref="GetRequest"/> request.</param>
         /// <returns>The Task for <see cref="EventOffers"/>.</returns>
         Task<EventOffers> GetEventOffersAsync(GetRequest getRequest);
 
         /// <summary>
-        /// Calls the get event offers asynchronous.
+        /// Calls the get event offers asynchronously.
         /// </summary>
         /// <param name="getRequest">The <see cref="GetRequest"/> request.</param>
         /// <returns>The Task for <see cref="IRestResponse"/>.</returns>
         Task<IRestResponse> CallGetEventOffersAsync(GetRequest getRequest);
 
         /// <summary>
-        /// Gets the event offers asynchronous.
+        /// Gets the event offers asynchronously.
         /// </summary>
         /// <param name="getRequest">The <see cref="IApiGetRequest"/> request.</param>
         /// <returns>The Task for <see cref="EventOffers"/>.</returns>
         Task<EventOffers> GetEventOffersAsync(IApiGetRequest getRequest);
 
         /// <summary>
-        /// Calls the get event offers asynchronous.
+        /// Calls the get event offers asynchronously.
         /// </summary>
         /// <param name="getRequest">The <see cref="IApiGetRequest"/> request.</param>
         /// <returns>The Task for <see cref="IRestResponse"/>.</returns>

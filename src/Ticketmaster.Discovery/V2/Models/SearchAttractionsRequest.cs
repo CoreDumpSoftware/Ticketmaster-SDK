@@ -6,7 +6,7 @@
     {
         public override SearchAttractionsRequest AddQueryParameter(QueryParameters parameter, string value)
         {
-            ParametersDictionary.Add(parameter.ToString(), value);
+            Parameters.Add(parameter.ToString(), value);
             return this;
         }
     }

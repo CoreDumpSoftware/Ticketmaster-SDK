@@ -205,5 +205,5 @@ var response = await cliet.CallGetEventDetailsAsync(new GetRequest(eventId));
 For all another classes a methods please check source code : [here](https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net) 
 ___
 
-### With any questions please contact [Me](https://www.linkedin.com/in/serhii-voznyi/)
+### With any questions please contact <a href="mailto:serhiivoznyi@gmail.com?subject=Issue%20with%20Ticketmaster-sdk&amp;">Me</a>
 

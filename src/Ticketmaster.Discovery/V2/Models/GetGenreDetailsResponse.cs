@@ -3,6 +3,8 @@ using Ticketmaster.Core;
 
 namespace Ticketmaster.Discovery.V2.Models
 {
+    using Core.V2.Models;
+
     public class GetGenreDetailsResponse : IdNamePair, IApiResponse
     {
         public Links Links { get; set; }

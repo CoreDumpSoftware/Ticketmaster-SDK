@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using AutoFixture;
     using Core;
+    using Core.V2.Models;
     using Discovery.V2;
     using Discovery.V2.Models;
     using NSubstitute;

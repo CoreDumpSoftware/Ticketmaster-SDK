@@ -5,6 +5,7 @@
     using RestSharp;
     using System.Net;
     using System.Threading.Tasks;
+    using Core.V2.Models;
 
     public class EventsClient : BaseClient, IEventsClient
     {

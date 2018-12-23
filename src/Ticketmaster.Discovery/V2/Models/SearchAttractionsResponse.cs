@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using Core;
+    using Core.V2.Models;
 
     public class SearchAttractionsResponse : IApiResponse
     {

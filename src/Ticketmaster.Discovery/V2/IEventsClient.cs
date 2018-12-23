@@ -4,6 +4,7 @@
     using Models;
     using RestSharp;
     using System.Threading.Tasks;
+    using Core.V2.Models;
 
     /// <summary>
     ///     The IEventsClient interface.

@@ -2,6 +2,7 @@
 {
     using Core;
     using System.Collections.Generic;
+    using Core.V2.Models;
 
     /// <summary>
     ///     The Get Events Response class.
@@ -20,7 +21,7 @@
         ///     Gets or sets the _links.
         /// </summary>
         /// <value>
-        ///     The <see cref="Models.Links" /> _links.
+        ///     The <see cref="Core.V2.Models.Links" /> _links.
         /// </value>
         public Links Links { get; set; }
 
@@ -28,7 +29,7 @@
         ///     Gets or sets the page.
         /// </summary>
         /// <value>
-        ///     The <see cref="Models.Page" /> page.
+        ///     The <see cref="Core.V2.Models.Page" /> page.
         /// </value>
         public Page Page { get; set; }
 

@@ -2,6 +2,7 @@
 {
     using System.Threading.Tasks;
     using Core;
+    using Core.V2.Models;
     using Models;
     using RestSharp;
 

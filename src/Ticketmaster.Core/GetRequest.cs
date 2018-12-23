@@ -11,7 +11,7 @@
 
         public override GetRequest AddQueryParameter(string parameterName, string value)
         {
-            ParametersDictionary.Add(parameterName, value);
+            Parameters.Add(parameterName, value);
             return this;
         }
     }

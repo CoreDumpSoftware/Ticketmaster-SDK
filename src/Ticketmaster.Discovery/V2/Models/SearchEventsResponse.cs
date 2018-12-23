@@ -1,7 +1,7 @@
 ﻿namespace Ticketmaster.Discovery.V2.Models
 {
-    using System.Collections.Generic;
     using Core;
+    using System.Collections.Generic;
 
     /// <summary>
     ///     The Get Events Response class.
@@ -44,5 +44,9 @@
 
             public List<Event> Events { get; set; }
         }
+    }
+
+    public class SearchEvents : SearchEventsResponse
+    {
     }
 }

@@ -6,7 +6,7 @@
     {
         public override SearchVenuesRequest AddQueryParameter(SearchVenuesQueryParameters parameter, string value)
         {
-            ParametersDictionary.Add(parameter.ToString(), value);
+            Parameters.Add(parameter.ToString(), value);
             return this;
         }
     }

@@ -29,7 +29,7 @@ the response using method ValidateResponse.
 
 ```C#
 /// <summary>
-/// Executes the request asynchronous.
+/// Executes the request asynchronously.
 /// </summary>
 /// <typeparam name="T">Type of expected response.</typeparam>
 /// <param name="request">The request.</param>

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Serhii Voznyi</Authors>
     <Company>Serhii Voznyi</Company>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Description>This project contains useful interfaces and implementation for them to makes calls to api endpoint more simple and friendly for .net developers. 
      The SDK splits all requests for Discovery API between specific interfaces by logical ownership.
      *IEventsClient
@@ -20,10 +20,22 @@
     <RepositoryUrl>https://github.com/SerhiiVoznyi/ticketmaster-sdk</RepositoryUrl>
     <PackageTags>Ticketmaster Discovery</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>Added ClientFactory class to create global API access point DiscoveryApi class like this:
+
+var config = new Config("Your API Key");
+var factory = new ClientFactory();
+var discovery = factory.Create&lt;DiscoveryApi&gt;(config);
+Or simply create instance of DiscoveryApi class and call method .Configure(config).
+
+var config = new Config("Your API Key");
+var discovery = new DiscoveryApi().Configure(config);
+Then we will be able to access all clients in this api. To access the endpoints for Events we can use Events Client like this:
+
+discovery.Events.SearchEventsAsync(new SearchEventsRequest());</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ticketmaster.Core" Version="2.0.0" />
+    <PackageReference Include="Ticketmaster.Core" Version="2.0.1" />
   </ItemGroup>
 
 </Project>

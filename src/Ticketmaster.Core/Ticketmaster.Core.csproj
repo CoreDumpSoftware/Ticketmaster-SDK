@@ -17,9 +17,9 @@
       * IdTypePairCollectionData
       * CurrencyValuePair</Description>
     <PackageId>Ticketmaster.Core</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <Authors>Serhii Voznyi</Authors>
-    <Copyright>Copyright Serhii Voznyi © 2018</Copyright>
+    <Copyright>Serhii Voznyi © 2018</Copyright>
     <PackageLicenseUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SerhiiVoznyi/ticketmaster-api-sdk-dot-net</RepositoryUrl>

@@ -7,11 +7,11 @@
         /// <summary>
         /// The parameters dictionary.
         /// </summary>
-        protected Dictionary<string, string> ParametersDictionary;
+        protected Dictionary<string, string> Parameters;
 
         protected BaseQuery()
         {
-            ParametersDictionary = new Dictionary<string, string>();
+            Parameters = new Dictionary<string, string>();
         }
 
         /// <summary>
@@ -20,7 +20,7 @@
         /// <value>
         /// The query parameters.
         /// </value>
-        public IEnumerable<KeyValuePair<string, string>> QueryParameters => ParametersDictionary;
+        public IEnumerable<KeyValuePair<string, string>> QueryParameters => Parameters;
 
         /// <summary>
         /// Adds the query parameter.

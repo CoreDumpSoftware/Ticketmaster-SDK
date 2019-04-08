@@ -13,6 +13,7 @@
         }
 
         public string Description { get; set; }
+        public Dates Dates { get; set; }
         public Sales Sales { get; set; }
         public Links Links { get; set; }
         public Embedded _embedded { get; set; }
